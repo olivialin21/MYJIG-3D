@@ -34,10 +34,29 @@ body{
   background-color: #404040;
 }
 .header-nav{
-  position:absolute;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 0;
+  margin-top: 20px;
+  margin-right: 40px;
 }
 .header-navItem{
   color:#FFF;
+  margin-left: 35px;
+}
+.header-icnFb{
+  height: 18px;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+}
+.header-icnIg{
+  height: 18px;
+  margin-left: 20px;
+}
+.header-yellow{
+  color:#FFD645;
 }
 
 .footer{
@@ -70,8 +89,8 @@ body{
 }
 .footer-copyright{
   margin-top: 15px;
+  margin-bottom: 0;
   text-align: end;
-  font-weight: 300;
 }
 
 /* HOME */

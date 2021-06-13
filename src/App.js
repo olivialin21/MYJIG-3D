@@ -4,6 +4,7 @@ import { StoreProvider } from "./store";
 import Home from './pages/Home';
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Works from './pages/Works'
 import Create from './pages/Create'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/works" component={Works} />
           <Route path="/create" component={Create} />
         </Switch>
       </BrowserRouter>
