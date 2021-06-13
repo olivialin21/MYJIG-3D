@@ -1,6 +1,16 @@
+import Header from "../components/Header"
+import BG from "../components/BG"
+import AboutUs from "../components/AboutUs"
+import Steps from "../components/Steps"
+
 function Home() {
   return (
-    <>123456</>
+    <>
+    <Header />
+    <BG />
+    <AboutUs />
+    <Steps />
+    </>
   );
 }
 
