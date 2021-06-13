@@ -36,7 +36,7 @@ export default function AboutUs() {
       <div className="aboutUs-Info">
         <div className="aboutUs-Info-title"><span>// </span><span>Why MyJig 3D</span></div>
         <div className="aboutUs-Info-content">
-        Because of the pronunciation, it is similar to ”intermediary” in Chinese. Also, we hope we can light your ideas up and make it jig like magic!  
+          Because of the pronunciation, it is similar to ”intermediary” in Chinese. Also, we hope we can light your ideas up and make it jig like magic!  
         </div>
       </div>
       <div className="aboutUs-slogan">

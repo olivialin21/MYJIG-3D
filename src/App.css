@@ -21,7 +21,6 @@ body{
   margin-left: -15px;
 }
 
-/* HOME */
 .header{
   width: 100%;
   height: 300px;
@@ -41,6 +40,40 @@ body{
   color:#FFF;
 }
 
+.footer{
+  padding: 80px 50px 0 50px;
+  font-size: 14px;
+  background-color: #000;
+}
+.footer-info p{
+  margin-bottom: 0;
+}
+.footer-info span{
+  color:#FFD645;
+}
+.footer-2F{
+  margin-top: 15px;
+  display: flex;
+  align-items: flex-end;
+}
+.footer-icnFb{
+  height: 18px;
+  width: 18px;
+  margin-right: 16px;
+  display: flex;
+  justify-content: center;
+}
+.footer-logo{
+  margin-left: auto;
+  margin-right: -25px;
+  height: 33px;
+}
+.footer-copyright{
+  margin-top: 15px;
+  text-align: end;
+  font-weight: 300;
+}
+/* HOME */
 .aboutUs{
   display: flex;
   flex-direction: column;
@@ -114,3 +147,4 @@ body{
   margin: 0 20px;
   line-height: 48px;
 }
+
