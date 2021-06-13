@@ -4,8 +4,8 @@ import imgLightN from "../images/light_n.svg"
 
 export default function AboutUs() {
   return(
-    <div className="aboutUs">
-      <p className="aboutUs-title">About Us</p>
+    <div className="home-section">
+      <p className="home-title">About Us</p>
       <img className="aboutUs-coverImg" src={imgCover} alt="cover" />
       <div className="aboutUs-datas">
         <div className="aboutUs-data">
@@ -26,7 +26,7 @@ export default function AboutUs() {
       </div>
       <div className="aboutUs-line"></div>
       <div className="aboutUs-Info">
-        <div className="aboutUs-Info-title"><span>// </span><span>About MyJig 3D</span></div>
+        <p className="aboutUs-Info-title"><span>// </span>About MyJig 3D</p>
         <div className="aboutUs-Info-content">
           MyJig 3D is an 3D modeling website dedicated to matching clients and creators. We also have a prominent team to provide decent service, so we can undertake big cases. 
           <br/><br/>
@@ -34,7 +34,7 @@ export default function AboutUs() {
         </div>
       </div>
       <div className="aboutUs-Info">
-        <div className="aboutUs-Info-title"><span>// </span><span>Why MyJig 3D</span></div>
+        <p className="aboutUs-Info-title"><span>// </span>About MyJig 3D</p>
         <div className="aboutUs-Info-content">
           Because of the pronunciation, it is similar to ”intermediary” in Chinese. Also, we hope we can light your ideas up and make it jig like magic!  
         </div>

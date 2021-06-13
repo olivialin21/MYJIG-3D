@@ -73,19 +73,22 @@ body{
   text-align: end;
   font-weight: 300;
 }
+
 /* HOME */
-.aboutUs{
+.home-section{
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1080px;
   margin:0 auto;
   margin-top:50px;
+  margin-bottom: 50px;
 }
-.aboutUs-title{
+.home-title{
   font-weight: bold;
   font-size: 36px;
 }
+
 .aboutUs-coverImg{
   margin-top: 30px;
   width: 100%;
@@ -127,8 +130,9 @@ body{
 .aboutUs-Info-title{
   font-size: 24px;
   font-weight: bold;
+  margin-bottom: 0;
 }
-.aboutUs-Info-title span:nth-child(1){
+.aboutUs-Info-title span{
   color:#FFD645;
 }
 .aboutUs-Info-content{
@@ -138,6 +142,7 @@ body{
 }
 .aboutUs-slogan{
   margin-top: 140px;
+  margin-bottom: 115px;
   display: flex;
 }
 .aboutUs-slogan p{
@@ -148,3 +153,15 @@ body{
   line-height: 48px;
 }
 
+.steps-block{
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  font-weight: medium;
+}
+.steps-title{
+  margin-bottom: 0;
+}
+.steps-title span{
+  color:#FFD645;
+}
