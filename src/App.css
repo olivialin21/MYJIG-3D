@@ -5,20 +5,24 @@ html {
   scroll-behavior: smooth;
 }
 body{
+  position:relative;
   background-color: #000;
   color:#FFF;
   font-family: 'Roboto Slab', serif;
 }
 .bg{
-  margin-top: 100px;
+  height: calc(100% - 300px);
   position:absolute;
   z-index:-1;
   width: 100%;
   overflow: hidden;
 }
 .bg img{
+  position:absolute;
+  top:50px;
   width: calc(100% + 30px);
   margin-left: -15px;
+  color: #FFF;
 }
 
 .header{
@@ -182,5 +186,14 @@ body{
   margin-bottom: 0;
 }
 .steps-title span{
+  color:#FFD645;
+}
+
+/* REGISTER */
+.registerForm{
+  margin: 0 auto;
+  max-width: 600px;
+}
+.registerForm p span{
   color:#FFD645;
 }

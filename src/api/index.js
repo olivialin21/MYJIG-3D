@@ -15,48 +15,69 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+// ENABLE DATA PERSISTANCE
+// firebase.firestore().settings({
+//   cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
+// });
+const store = firebase.firestore();
+store.enablePersistence()
+.catch(function(err) {
+    if (err.code == 'failed-precondition') {
+        // Multiple tabs open, persistence can only be enabled
+        // in one tab at a a time.
+        // ...
+        console.log(err.code);
+    } else if (err.code == 'unimplemented') {
+        // The current browser does not support all of the
+        // features required to enable persistence
+        // ...
+        console.log(err.code);
+    }
+});
+
+
 // REFERENCE PRODUCTS
-const productsCollectionRef = firebase.firestore().collection("products");
-const productsDocRef = productsCollectionRef.doc("json");
-const allProductsCollectionRef = productsDocRef.collection("allProducts");
-const allOrdersCollectionRef = firebase.firestore().collection("allOrders");
+// const productsCollectionRef = store.collection("products");
+// const productsDocRef = productsCollectionRef.doc("json");
+// const allProductsCollectionRef = productsDocRef.collection("allProducts");
+// const allOrdersCollectionRef = store.collection("allOrders");
 
 //REFERENCE AUTH
 const auth = firebase.auth();
 
-export const getProductById = async (productId) => {
-  // REFERENCE PRODUCTS COLLECTION
-  const doc = await allProductsCollectionRef.doc(productId).get();
-  return doc.data()
-}
+// export const getProductById = async (productId) => {
+//   // REFERENCE PRODUCTS COLLECTION
+//   const doc = await allProductsCollectionRef.doc(productId).get();
+//   return doc.data()
+// }
 
-export const getProducts = async (url) => {
-  const collection = jsonInfo.find(element => element.url === url);
-  const collectionName = collection.name || "allProducts";
-  let jsonProducts = [];
+// export const getProducts = async (url) => {
+//   const collection = jsonInfo.find(element => element.url === url);
+//   const collectionName = collection.name || "allProducts";
+//   let jsonProducts = [];
 
-  // QUERY PRODUCTS
-  let querySnapshot;
-  if (collectionName === "allProducts")
-    querySnapshot = await allProductsCollectionRef.get();
-  else
-    querySnapshot = await allProductsCollectionRef.where("category", "==", collectionName).get();
-  querySnapshot.forEach((doc) => {
-    jsonProducts.push(doc.data());
-  });
-  return jsonProducts;
-}
+//   // QUERY PRODUCTS
+//   let querySnapshot;
+//   if (collectionName === "allProducts")
+//     querySnapshot = await allProductsCollectionRef.get();
+//   else
+//     querySnapshot = await allProductsCollectionRef.where("category", "==", collectionName).get();
+//   querySnapshot.forEach((doc) => {
+//     jsonProducts.push(doc.data());
+//   });
+//   return jsonProducts;
+// }
 
 // export const feedProducts = () => {
 //   products.forEach((product) => {
 //     const docRef = allProductsCollectionRef.doc();
-//     // const user = auth.currentUser.uid;
 //     const id = docRef.id;
+//     const user = auth.currentUser.uid;
 
 //     // Store Data for Aggregation Queries
 //     docRef.set({
 //       ...product,
-//       // user,
+//       user,
 //       id
 //     });
 //   })
@@ -84,35 +105,35 @@ export const updateUserInfoApi = async (email, password, displayName) => {
   return user;
 }
 
-export const createOrderApi = async (order) => {
-  const user = auth.currentUser.uid;
-  const orderRef = await allOrdersCollectionRef.doc();
-  const id = orderRef.id;
-  // Store Data for Aggregation Queries
-  await orderRef.set({
-    ...order,
-    id,
-    user
-  });
-  return { ...order, id };
-}
+// export const createOrderApi = async (order) => {
+//   const user = auth.currentUser.uid;
+//   const orderRef = await allOrdersCollectionRef.doc();
+//   const id = orderRef.id;
+//   // Store Data for Aggregation Queries
+//   await orderRef.set({
+//     ...order,
+//     id,
+//     user
+//   });
+//   return { ...order, id };
+// }
 
-export const getOrderById = async (orderId) => {
-  const doc = await allOrdersCollectionRef.doc(orderId).get();
-  return doc.data()
-}
+// export const getOrderById = async (orderId) => {
+//   const doc = await allOrdersCollectionRef.doc(orderId).get();
+//   return doc.data()
+// }
 
-export const getOrderByUser = async () => {
-  const user = auth.currentUser.uid;
-  let jsonOrders = [];
+// export const getOrderByUser = async () => {
+//   const user = auth.currentUser.uid;
+//   let jsonOrders = [];
 
-  // QUERY Orders
-  const querySnapshot = await allOrdersCollectionRef.where("user", "==", user).get();
-  querySnapshot.forEach((doc) => {
-    jsonOrders.push(doc.data());
-  });
-  return jsonOrders;
-}
+//   // QUERY Orders
+//   const querySnapshot = await allOrdersCollectionRef.where("user", "==", user).get();
+//   querySnapshot.forEach((doc) => {
+//     jsonOrders.push(doc.data());
+//   });
+//   return jsonOrders;
+// }
 
 export const signOut = () => {
   auth.signOut();
