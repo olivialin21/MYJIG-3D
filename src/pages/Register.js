@@ -1,5 +1,5 @@
 import * as QueryString from "query-string";
-
+import Navbar from "../components/Navbar"
 import Header from "../components/Header"
 import BG from "../components/BG"
 import RegisterForm from "../components/RegisterForm"
@@ -10,6 +10,7 @@ function Register() {
 
   return (
     <>
+      <Navbar />
       <Header />
       <BG />
       <RegisterForm />

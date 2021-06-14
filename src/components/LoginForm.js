@@ -2,41 +2,46 @@ import React, { useContext, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { checkLogin, loginToFirebase, rememberLoginUser } from '../actions'
 import { StoreContext } from "../store"
+import imgLogo from "../images/logo.svg"
 
 export default function LoginForm() {
   const { state:{ userSignin: { userInfo, loading, error, remember } }, dispatch } = useContext(StoreContext);
   // const history = useHistory();
 
-  const onFinish = async (values) => {
-    console.log('Received values of form: ', values);
-    await loginToFirebase(dispatch, values);
-  };
+  // const onFinish = async (values) => {
+  //   console.log('Received values of form: ', values);
+  //   await loginToFirebase(dispatch, values);
+  // };
 
-  const onChange = e => {
-    rememberLoginUser(dispatch, e.target.checked);
-  }
+  // const onChange = e => {
+  //   rememberLoginUser(dispatch, e.target.checked);
+  // }
 
   // useEffect(() => {    
   //   if( userInfo && checkLogin(dispatch) ) history.push(redirect);
   // }, [ userInfo ]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return(
-    <div className="loginform">
-      <form>
-        <div className="form-group">
+    <div className="commonForm loginForm">
+      <div className="loginForm-title">
+        <p>Sign in with your</p>
+        <img src={imgLogo} alt="logo"/>
+        <p>account</p>
+      </div>
+      <form className="commonForm-form">
+        <div className="form-group commonForm-block">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+          <input type="email" className="form-control" id="exampleInputEmail1" />
         </div>
-        <div className="form-group">
+        <div className="form-group commonForm-block mb-1">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
+          <input type="password" className="form-control" id="exampleInputPassword1" />
         </div>
-        <div className="form-group form-check">
-          <input type="checkbox" className="form-check-input" id="exampleCheck1" onClick={onChange}/>
-          <label className="form-check-label" for="exampleCheck1">Check me out</label>
+        <div className="form-group form-check mb-5 ml-1">
+          <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+          <label className="form-check-label" for="exampleCheck1">Remember Me</label>
         </div>
-        <button type="submit" className="btn btn-primary" onClick={onFinish}>Submit</button>
+        <button type="submit">Submit</button>
       </form>
       {error === "" ? (
           <></>

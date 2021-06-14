@@ -34,7 +34,7 @@ export default function AboutUs() {
         </div>
       </div>
       <div className="aboutUs-Info">
-        <p className="aboutUs-Info-title"><span>// </span>About MyJig 3D</p>
+        <p className="aboutUs-Info-title"><span>// </span>Why MyJig 3D</p>
         <div className="aboutUs-Info-content">
           Because of the pronunciation, it is similar to ”intermediary” in Chinese. Also, we hope we can light your ideas up and make it jig like magic!  
         </div>
