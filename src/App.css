@@ -177,18 +177,39 @@ body{
   margin-right: 40px;
 }
 .header-navItem{
+  position:relative;
   color:#FFF;
   margin-left: 35px;
+  display: inline;
+}
+.header-navItem::before{
+  content:"";
+  position:absolute;
+  z-index: 9;
+  height: 2px;
+  width: 0;
+  background-color: #FFD645;
+  bottom: -5px;
+  left: 0;
+  transition: all 0.4s;
+}
+.header-navItem:hover::before{
+  width: 100%;
+  transition: all 0.4s;
 }
 .header-icnFb{
+  cursor: pointer;
   height: 18px;
   width: 18px;
   display: flex;
   justify-content: center;
 }
 .header-icnIg{
+  cursor: pointer;
   height: 18px;
   margin-left: 20px;
+  display: flex;
+  justify-content: center;
 }
 .header-yellow{
   color:#FFD645;
@@ -260,6 +281,9 @@ body{
   margin-top: 30px;
   width: 100%;
 }
+.aboutUs-coverImg img{
+  width: 100%;
+}
 .aboutUs-datas{
   margin-top: 30px;
   display: flex;
@@ -326,6 +350,9 @@ body{
   align-items: center;
   font-weight: medium;
 }
+.steps-block img{
+  max-width: 180px;
+}
 .steps-title{
   margin-bottom: 0;
 }
@@ -388,14 +415,13 @@ body{
   width: 100%;
 }
 .commonForm-block{
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .commonForm-block label{
-  margin-bottom: 0;
+  margin-bottom: 2px;
 }
 .commonForm-block input{
   background-color: #C4C4C4;
-  height: 35px;
 }
 
 /* REGISTER */

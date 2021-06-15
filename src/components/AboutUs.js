@@ -6,7 +6,7 @@ export default function AboutUs() {
   return(
     <div className="home-section">
       <p className="home-title">About Us</p>
-      <img className="aboutUs-coverImg" src={imgCover} alt="cover" />
+      <div className="aboutUs-coverImg"><img src={imgCover} alt="cover" /></div>
       <div className="aboutUs-datas">
         <div className="aboutUs-data">
           <p>Creators</p>

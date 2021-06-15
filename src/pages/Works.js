@@ -1,6 +1,16 @@
+import Navbar from "../components/Navbar"
+import Header from "../components/Header"
+import BG from "../components/BG"
+import Footer from "../components/Footer"
+
 function Works() {
   return (
-    <>Works</>
+    <>
+      <Navbar />
+      <Header />
+      <BG />
+      <Footer />
+    </>
   );
 }
 

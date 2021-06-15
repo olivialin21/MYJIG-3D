@@ -44,7 +44,7 @@ export default function Navbar() {
             </span>
           </Link>
           <div className="header-navItem header-icnFb"><img src={imgFb} alt="icn_fb" /></div>
-          <img className="header-navItem header-icnIg" src={imgIg} alt="icn_Ig"/>
+          <div className="header-navItem header-icnIg"><img src={imgIg} alt="icn_Ig"/></div>
           <Link to="/login">
             <span className="header-navItem header-yellow">Log in</span>
           </Link>

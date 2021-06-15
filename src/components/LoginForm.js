@@ -24,7 +24,7 @@ export default function LoginForm() {
   return(
     <div className="commonForm loginForm">
       <div className="loginForm-title">
-        <p>Sign in with your</p>
+        <p>Log in with your</p>
         <img src={imgLogo} alt="logo"/>
         <p>account</p>
       </div>
@@ -41,9 +41,10 @@ export default function LoginForm() {
           <input type="checkbox" className="form-check-input" id="exampleCheck1" />
           <label className="form-check-label" for="exampleCheck1">Remember Me</label>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">LOG IN</button>
+        <p></p>
       </form>
-      {error === "" ? (
+      {/* {error === "" ? (
           <></>
         ) : (
           <div className="login-form__error-wrap">
@@ -52,7 +53,7 @@ export default function LoginForm() {
             </h3>
             <p className="login-form__error-message">{error}</p>
           </div>
-        )}
+        )} */}
     </div>
     
   );
