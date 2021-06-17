@@ -1,0 +1,24 @@
+{
+  "imgurl":"../images/works/I-1.png",
+  "name":"Panton Chair",
+  "photoNum":"4",
+  "images":
+  [
+    {
+      "ID":"1",
+      "imgurl":"../images/works/I-1.png"
+    },
+    {
+      "ID":"2",
+      "imgurl":"../images/works/I-2.png"
+    },
+    {
+      "ID":"3",
+      "imgurl":"../images/works/I-3.png"
+    },
+    {
+      "ID":"4",
+      "imgurl":"../images/works/I-4.png"
+    }
+  ]
+}

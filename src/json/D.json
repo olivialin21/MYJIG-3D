@@ -1,0 +1,40 @@
+{
+  "imgurl":"../images/works/D-1.png",
+  "name":"IKEA MILLBERGET",
+  "photoNum":"8",
+  "images":
+  [
+    {
+      "ID":"1",
+      "imgurl":"../images/works/D-1.png"
+    },
+    {
+      "ID":"2",
+      "imgurl":"../images/works/D-2.png"
+    },
+    {
+      "ID":"3",
+      "imgurl":"../images/works/D-3.png"
+    },
+    {
+      "ID":"4",
+      "imgurl":"../images/works/D-4.png"
+    },
+    {
+      "ID":"5",
+      "imgurl":"../images/works/D-5.png"
+    },
+    {
+      "ID":"6",
+      "imgurl":"../images/works/D-6.png"
+    },
+    {
+      "ID":"7",
+      "imgurl":"../images/works/D-7.png"
+    },
+    {
+      "ID":"8",
+      "imgurl":"../images/works/D-8.png"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "imgurl":"../images/works/F-1.png",
+  "name":"Penguin",
+  "photoNum":"7",
+  "images":
+  [
+    {
+      "ID":"1",
+      "imgurl":"../images/works/F-1.png"
+    },
+    {
+      "ID":"2",
+      "imgurl":"../images/works/F-2.png"
+    },
+    {
+      "ID":"3",
+      "imgurl":"../images/works/F-3.png"
+    },
+    {
+      "ID":"4",
+      "imgurl":"../images/works/F-4.png"
+    },
+    {
+      "ID":"5",
+      "imgurl":"../images/works/F-5.png"
+    },
+    {
+      "ID":"6",
+      "imgurl":"../images/works/F-6.png"
+    },
+    {
+      "ID":"7",
+      "imgurl":"../images/works/F-7.png"
+    }
+  ]
+}

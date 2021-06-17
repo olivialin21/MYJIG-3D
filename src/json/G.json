@@ -1,0 +1,24 @@
+{
+  "imgurl":"../images/works/G-1.png",
+  "name":"BROWN",
+  "photoNum":"4",
+  "images":
+  [
+    {
+      "ID":"1",
+      "imgurl":"../images/works/G-1.png"
+    },
+    {
+      "ID":"2",
+      "imgurl":"../images/works/G-2.png"
+    },
+    {
+      "ID":"3",
+      "imgurl":"../images/works/G-3.png"
+    },
+    {
+      "ID":"4",
+      "imgurl":"../images/works/G-4.png"
+    }
+  ]
+}

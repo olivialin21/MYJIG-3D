@@ -1,0 +1,24 @@
+{
+  "imgurl":"../images/works/6-1.png",
+  "name":"Waterwheel",
+  "photoNum":"4",
+  "images":
+  [
+    {
+      "ID":"1",
+      "imgurl":"../images/works/6-1.png"
+    },
+    {
+      "ID":"2",
+      "imgurl":"../images/works/6-2.png"
+    },
+    {
+      "ID":"3",
+      "imgurl":"../images/works/6-3.png"
+    },
+    {
+      "ID":"4",
+      "imgurl":"../images/works/6-4.png"
+    }
+  ]
+}
