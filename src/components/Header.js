@@ -1,6 +1,7 @@
 import imgLogo from "../images/logo.svg"
 import imgFb from "../images/icn_fb.svg"
 import imgIg from "../images/icn_ig.svg"
+import videoCover from "../videos/cover.mp4"
 import { Link } from 'react-router-dom';
 
 export default function Header() {
@@ -35,6 +36,7 @@ export default function Header() {
         <div className="header-logo">
           <img src={imgLogo} alt="logo"/>
         </div>
+        <video src={videoCover} autoPlay muted loop />
       </div>
     </header>
   );

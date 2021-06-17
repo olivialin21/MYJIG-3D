@@ -10,6 +10,9 @@ body{
   color:#FFF;
   font-family: 'Roboto Slab', serif;
 }
+a{
+  text-decoration:none !important;
+}
 .bg{
   height: calc(100% - 300px);
   position:absolute;
@@ -167,9 +170,21 @@ body{
   width: 100%;
   height: 100%;
   background-color: #404040;
+  overflow: hidden;
+}
+.header-logo{
+  z-index: 9;
+  position: absolute;
+}
+.header-bg video{
+  margin: 0;
+  object-fit: cover;
+  width: 100%;
+  opacity: 0.2;
 }
 .header-nav{
   position: absolute;
+  z-index:99;
   display: flex;
   align-items: center;
   right: 0;
