@@ -3,6 +3,7 @@ import imgFb from "../images/icn_fb.svg"
 import imgIg from "../images/icn_ig.svg"
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Navbar() {
   const [offsetX, setOffsetX] = useState(window.innerWidth);
@@ -25,32 +26,44 @@ export default function Navbar() {
       <button class="navbar-toggler third-button nav-toggler" data-toggle="collapse" data-target="#nav-toggler" onClick={clickHam}>
         <div class={hamToggle ? "animated-icon3 open" : "animated-icon3"}><span></span><span></span><span></span></div>
       </button>
-      <img className="nav-logo m-auto" src={imgLogo} alt="logo"/>
+      <HashLink to="/#home" className="m-auto">
+        <img className="nav-logo" src={imgLogo} alt="logo"/>
+      </HashLink>
       <div className={hamToggle ? "collapse navbar-collapse show" : "collapse navbar-collapse"} id="nav-toggler">
         <div className="ml-auto navbar-nav nav-nav">
-          <Link to="/">
-            <span className="header-navItem">About Us</span>
-          </Link>
-          <Link to="/">
-            <span className="header-navItem">Steps</span>
-          </Link>
-          <Link to="/works">
-            <span className="header-navItem">Works</span>
-          </Link>
-          <Link to="/create">
-            <span className="header-navItem">
+          <span className="header-navItem">
+            <HashLink to="/#aboutUs">
+              About Us
+            </HashLink>
+          </span>
+          <span className="header-navItem">
+            <HashLink to="/#steps">
+              Steps
+            </HashLink>
+          </span>
+          <span className="header-navItem">
+            <Link to="/works">
+              Works
+            </Link>
+          </span>
+          <span className="header-navItem">
+            <Link to="/create">
               Create
               <span>+</span>
-            </span>
-          </Link>
+            </Link>
+          </span>       
           <div className="header-navItem header-icnFb"><img src={imgFb} alt="icn_fb" /></div>
           <div className="header-navItem header-icnIg"><img src={imgIg} alt="icn_Ig"/></div>
-          <Link to="/login">
-            <span className="header-navItem header-yellow">Log in</span>
-          </Link>
-          <Link to="/Register">
-            <span className="header-navItem header-yellow">Sign up</span>
-          </Link>
+          <span className="header-navItem header-yellow">
+            <Link to="/login">
+              Log in
+            </Link>
+          </span>
+          <span className="header-navItem header-yellow">
+            <Link to="/Register">
+              Sign up
+            </Link>
+          </span>
         </div>
       </div>
     </nav>

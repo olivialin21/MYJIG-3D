@@ -216,6 +216,9 @@ a{
   margin-left: 35px;
   display: inline;
 }
+.header-navItem a{
+  color: #FFF;
+}
 .header-navItem::before{
   content:"";
   position:absolute;
@@ -245,7 +248,7 @@ a{
   display: flex;
   justify-content: center;
 }
-.header-yellow{
+.header-yellow a{
   color:#FFD645;
 }
 .header .disappear{

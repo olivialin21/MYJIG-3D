@@ -3,34 +3,45 @@ import imgFb from "../images/icn_fb.svg"
 import imgIg from "../images/icn_ig.svg"
 import videoCover from "../videos/cover.mp4"
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Header() {
   return(
-    <header className="header">
+    <header id="home" className="header">
       <div className="header-nav">
-        <Link to="/">
-          <span className="header-navItem">About Us</span>
-        </Link>
-        <Link to="/">
-          <span className="header-navItem">Steps</span>
-        </Link>
-        <Link to="/works">
-          <span className="header-navItem">Works</span>
-        </Link>
-        <Link to="/create">
-          <span className="header-navItem">
-            Create
-            <span>+</span>
+      <span className="header-navItem">
+            <HashLink to="/#aboutUs">
+              About Us
+            </HashLink>
           </span>
-        </Link>
-        <div className="header-navItem header-icnFb"><img src={imgFb} alt="icn_fb" /></div>
-        <div className="header-navItem header-icnIg"><img src={imgIg} alt="icn_Ig"/></div>
-        <Link to="/login">
-          <span className="header-navItem header-yellow">Log in</span>
-        </Link>
-        <Link to="/Register">
-          <span className="header-navItem header-yellow">Sign up</span>
-        </Link>
+          <span className="header-navItem">
+            <HashLink to="/#steps">
+              Steps
+            </HashLink>
+          </span>
+          <span className="header-navItem">
+            <Link to="/works">
+              Works
+            </Link>
+          </span>
+          <span className="header-navItem">
+            <Link to="/create">
+              Create
+              <span>+</span>
+            </Link>
+          </span>       
+          <div className="header-navItem header-icnFb"><img src={imgFb} alt="icn_fb" /></div>
+          <div className="header-navItem header-icnIg"><img src={imgIg} alt="icn_Ig"/></div>
+          <span className="header-navItem header-yellow">
+            <Link to="/login">
+              Log in
+            </Link>
+          </span>
+          <span className="header-navItem header-yellow">
+            <Link to="/Register">
+              Sign up
+            </Link>
+          </span>
       </div>
       <div className="header-bg">
         <div className="header-logo">
