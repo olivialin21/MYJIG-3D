@@ -1,6 +1,6 @@
 export default function RegisterForm() {
   return(
-    <div className="commonForm">
+    <div className="commonForm mt75">
       <p className="registerForm-title">Join us !</p>
       <form className="commonForm-form">
         <div className="form-group commonForm-block">

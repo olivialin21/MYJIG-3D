@@ -1,590 +1,590 @@
 [
   {
     "id":"1",
-    "imgurl":"../images/works/1-1.png",
+    "imgurl":"1-1",
     "name":"Desk Stand for RODE Videomicro",
     "photoNum":"5",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/1-1.png"
+        "imgurl":"1-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/1-2.png"
+        "imgurl":"1-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/1-3.png"
+        "imgurl":"1-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/1-4.png"
+        "imgurl":"1-4"
       },
       {
         "ID":"5",
-        "imgurl":"../images/works/1-5.png"
+        "imgurl":"1-5"
       }
     ]
   },
   {
     "id":"2",
-    "imgurl":"../images/works/2-1.png",
+    "imgurl":"2-1",
     "name":"PISKE Tray for Glasses",
     "photoNum":"2",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/2-1.png"
+        "imgurl":"2-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/2-2.png"
+        "imgurl":"2-2"
       }
     ]
   },
   {
     "id":"3",
-    "imgurl":"../images/works/3-1.png",
+    "imgurl":"3-1",
     "name":"Laptop Stand for Small Desk",
     "photoNum":"5",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/3-1.png"
+        "imgurl":"3-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/3-2.png"
+        "imgurl":"3-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/3-3.png"
+        "imgurl":"3-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/3-4.png"
+        "imgurl":"3-4"
       },
       {
         "ID":"5",
-        "imgurl":"../images/works/3-5.png"
+        "imgurl":"3-5"
       }
     ]
   },
   {
     "id":"4",
-    "imgurl":"../images/works/4-1.png",
+    "imgurl":"4-1",
     "name":"Cable Manager",
     "photoNum":"5",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/4-1.png"
+        "imgurl":"4-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/4-2.png"
+        "imgurl":"4-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/4-3.png"
+        "imgurl":"4-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/4-4.png"
+        "imgurl":"4-4"
       },
       {
         "ID":"5",
-        "imgurl":"../images/works/4-5.png"
+        "imgurl":"4-5"
       }
     ]
   },
   {
     "id":"5",
-    "imgurl":"../images/works/5-1.png",
+    "imgurl":"5-1",
     "name":"Drive Bay Drawer",
     "photoNum":"4",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/5-1.png"
+        "imgurl":"5-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/5-2.png"
+        "imgurl":"5-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/5-3.png"
+        "imgurl":"5-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/5-4.png"
+        "imgurl":"5-4"
       }
     ]
   },
   {
     "id":"6",
-    "imgurl":"../images/works/6-1.png",
+    "imgurl":"6-1",
     "name":"Waterwheel",
     "photoNum":"4",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/6-1.png"
+        "imgurl":"6-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/6-2.png"
+        "imgurl":"6-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/6-3.png"
+        "imgurl":"6-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/6-4.png"
+        "imgurl":"6-4"
       }
     ]
   },
   {
     "id":"7",
-    "imgurl":"../images/works/7-1.png",
+    "imgurl":"7-1",
     "name":"Drain Rack",
     "photoNum":"4",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/7-1.png"
+        "imgurl":"7-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/7-2.png"
+        "imgurl":"7-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/7-3.png"
+        "imgurl":"7-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/7-4.png"
+        "imgurl":"7-4"
       }
     ]
   },
   {
     "id":"8",
-    "imgurl":"../images/works/8-1.png",
+    "imgurl":"8-1",
     "name":"Stylish Laptop Stand",
     "photoNum":"5",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/8-1.png"
+        "imgurl":"8-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/8-2.png"
+        "imgurl":"8-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/8-3.png"
+        "imgurl":"8-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/8-4.png"
+        "imgurl":"8-4"
       },
       {
         "ID":"5",
-        "imgurl":"../images/works/8-5.png"
+        "imgurl":"8-5"
       }
     ]
   },
   {
     "id":"9",
-    "imgurl":"../images/works/9-1.png",
+    "imgurl":"9-1",
     "name":"Penguin Charm",
     "photoNum":"4",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/9-1.png"
+        "imgurl":"9-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/9-2.png"
+        "imgurl":"9-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/9-3.png"
+        "imgurl":"9-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/9-4.png"
+        "imgurl":"9-4"
       }
     ]
   },
   {
     "id":"A",
-    "imgurl":"../images/works/A-1.png",
+    "imgurl":"A-1",
     "name":"Manager for AC Adaptor",
     "photoNum":"3",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/A-1.png"
+        "imgurl":"A-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/A-2.png"
+        "imgurl":"A-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/A-3.png"
+        "imgurl":"A-3"
       }
     ]
   },
   {
     "id":"B",
-    "imgurl":"../images/works/B-1.png",
+    "imgurl":"B-1",
     "name":"Decent Laptop Stand",
     "photoNum":"3",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/B-1.png"
+        "imgurl":"B-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/B-2.png"
+        "imgurl":"B-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/B-3.png"
+        "imgurl":"B-3"
       }
     ]
   },
   {
     "id":"C",
-    "imgurl":"../images/works/C-1.png",
+    "imgurl":"C-1",
     "name":"IKEA VEBEROD",
     "photoNum":"6",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/C-1.png"
+        "imgurl":"C-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/C-2.png"
+        "imgurl":"C-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/C-3.png"
+        "imgurl":"C-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/C-4.png"
+        "imgurl":"C-4"
       },
       {
         "ID":"5",
-        "imgurl":"../images/works/C-5.png"
+        "imgurl":"C-5"
       },
       {
         "ID":"6",
-        "imgurl":"../images/works/C-6.png"
+        "imgurl":"C-6"
       }
     ]
   },
   {
     "id":"D",
-    "imgurl":"../images/works/D-1.png",
+    "imgurl":"D-1",
     "name":"IKEA MILLBERGET",
     "photoNum":"8",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/D-1.png"
+        "imgurl":"D-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/D-2.png"
+        "imgurl":"D-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/D-3.png"
+        "imgurl":"D-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/D-4.png"
+        "imgurl":"D-4"
       },
       {
         "ID":"5",
-        "imgurl":"../images/works/D-5.png"
+        "imgurl":"D-5"
       },
       {
         "ID":"6",
-        "imgurl":"../images/works/D-6.png"
+        "imgurl":"D-6"
       },
       {
         "ID":"7",
-        "imgurl":"../images/works/D-7.png"
+        "imgurl":"D-7"
       },
       {
         "ID":"8",
-        "imgurl":"../images/works/D-8.png"
+        "imgurl":"D-8"
       }
     ]
   },
   {
     "id":"E",
-    "imgurl":"../images/works/E-1.png",
+    "imgurl":"E-1",
     "name":"Modeling of Oral Hygiene Products",
     "photoNum":"7",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/E-1.png"
+        "imgurl":"E-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/E-2.png"
+        "imgurl":"E-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/E-3.png"
+        "imgurl":"E-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/E-4.png"
+        "imgurl":"E-4"
       },
       {
         "ID":"5",
-        "imgurl":"../images/works/E-5.png"
+        "imgurl":"E-5"
       },
       {
         "ID":"6",
-        "imgurl":"../images/works/E-6.png"
+        "imgurl":"E-6"
       },
       {
         "ID":"7",
-        "imgurl":"../images/works/E-7.png"
+        "imgurl":"E-7"
       }
     ]
   },
   {
     "id":"F",
-    "imgurl":"../images/works/F-1.png",
+    "imgurl":"F-1",
     "name":"Penguin",
     "photoNum":"7",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/F-1.png"
+        "imgurl":"F-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/F-2.png"
+        "imgurl":"F-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/F-3.png"
+        "imgurl":"F-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/F-4.png"
+        "imgurl":"F-4"
       },
       {
         "ID":"5",
-        "imgurl":"../images/works/F-5.png"
+        "imgurl":"F-5"
       },
       {
         "ID":"6",
-        "imgurl":"../images/works/F-6.png"
+        "imgurl":"F-6"
       },
       {
         "ID":"7",
-        "imgurl":"../images/works/F-7.png"
+        "imgurl":"F-7"
       }
     ]
   },
   {
     "id":"G",
-    "imgurl":"../images/works/G-1.png",
+    "imgurl":"G-1",
     "name":"BROWN",
     "photoNum":"4",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/G-1.png"
+        "imgurl":"G-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/G-2.png"
+        "imgurl":"G-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/G-3.png"
+        "imgurl":"G-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/G-4.png"
+        "imgurl":"G-4"
       }
     ]
   },
   {
     "id":"H",
-    "imgurl":"../images/works/H-1.png",
+    "imgurl":"H-1",
     "name":"Rim",
     "photoNum":"4",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/H-1.png"
+        "imgurl":"H-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/H-2.png"
+        "imgurl":"H-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/H-3.png"
+        "imgurl":"H-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/H-4.png"
+        "imgurl":"H-4"
       }
     ]
   },
   {
     "id":"I",
-    "imgurl":"../images/works/I-1.png",
+    "imgurl":"I-1",
     "name":"Panton Chair",
     "photoNum":"4",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/I-1.png"
+        "imgurl":"I-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/I-2.png"
+        "imgurl":"I-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/I-3.png"
+        "imgurl":"I-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/I-4.png"
+        "imgurl":"I-4"
       }
     ]
   },
   {
     "id":"J",
-    "imgurl":"../images/works/J-1.png",
+    "imgurl":"J-1",
     "name":"Faucet",
     "photoNum":"4",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/J-1.png"
+        "imgurl":"J-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/J-2.png"
+        "imgurl":"J-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/J-3.png"
+        "imgurl":"J-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/J-4.png"
+        "imgurl":"J-4"
       }
     ]
   },
   {
     "id":"K",
-    "imgurl":"../images/works/K-1.png",
+    "imgurl":"K-1",
     "name":"Realistic Water",
     "photoNum":"5",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/K-1.png"
+        "imgurl":"K-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/K-2.png"
+        "imgurl":"K-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/K-3.png"
+        "imgurl":"K-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/K-4.png"
+        "imgurl":"K-4"
       },
       {
         "ID":"5",
-        "imgurl":"../images/works/K-5.png"
+        "imgurl":"K-5"
       }
     ]
   },
   {
     "id":"L",
-    "imgurl":"../images/works/L-1.png",
+    "imgurl":"L-1",
     "name":"Juicy Salif",
     "photoNum":"7",
     "images":
     [
       {
         "ID":"1",
-        "imgurl":"../images/works/L-1.png"
+        "imgurl":"L-1"
       },
       {
         "ID":"2",
-        "imgurl":"../images/works/L-2.png"
+        "imgurl":"L-2"
       },
       {
         "ID":"3",
-        "imgurl":"../images/works/L-3.png"
+        "imgurl":"L-3"
       },
       {
         "ID":"4",
-        "imgurl":"../images/works/L-4.png"
+        "imgurl":"L-4"
       },
       {
         "ID":"5",
-        "imgurl":"../images/works/L-5.png"
+        "imgurl":"L-5"
       },
       {
         "ID":"6",
-        "imgurl":"../images/works/L-6.png"
+        "imgurl":"L-6"
       },
       {
         "ID":"7",
-        "imgurl":"../images/works/L-7.png"
+        "imgurl":"L-7"
       }
     ]
   }

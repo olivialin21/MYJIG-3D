@@ -22,7 +22,7 @@ export default function LoginForm() {
   // }, [ userInfo ]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return(
-    <div className="commonForm loginForm">
+    <div className="commonForm loginForm mt57">
       <div className="loginForm-title">
         <p>Log in with your</p>
         <img src={imgLogo} alt="logo"/>

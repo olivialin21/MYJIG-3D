@@ -4,7 +4,7 @@ import imgLightN from "../images/light_n.svg"
 
 export default function AboutUs() {
   return(
-    <div className="home-section">
+    <div className="home-section mt75">
       <p className="home-title">About Us</p>
       <div className="aboutUs-coverImg"><img src={imgCover} alt="cover" /></div>
       <div className="aboutUs-datas">

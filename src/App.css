@@ -1,6 +1,25 @@
 /* COMMON */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&display=swap');
 
+@media (max-width: 992px){
+  .mt75{
+    margin-top: 75px !important;
+  }
+}
+@media (min-width: 1600px){ 
+  .container-fluid{
+    max-width: 1500px;
+  }
+  .col-xl-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 20%;
+    float: left;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -286,11 +305,6 @@ a{
   font-weight: bold;
   font-size: 36px;
 }
-@media(max-width:992px){
-  .home-section{
-    margin-top: 75px;
-  }
-}
 
 .aboutUs-coverImg{
   margin-top: 30px;
@@ -443,6 +457,7 @@ a{
 .registerForm-title{
   font-size: 48px;
   font-weight: bold;
+  margin-top: 0 !important;
   margin-bottom: 50px;
 }
 
@@ -451,7 +466,8 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 .loginForm-title{
   display: flex;
@@ -467,4 +483,68 @@ a{
 }
 .loginForm-form{
   max-width: 600px;
+}
+
+/* WORKS */
+.worksList{
+  margin-top: 50px;
+}
+
+.worksList-title{
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+}
+.worksList-list{
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.worksItem{
+  display: flex;
+  justify-content: center;
+}
+.worksItem-cover{
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+.worksItem img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.worksItem .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  bottom: 0;
+  color:#FFF;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,0.4);
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.worksItem-cover:hover .info{
+  background-color: transparent;
+  color:transparent;
+  transition: all 0.4s;
+}
+.worksItem .line{
+  font-size: 20px;
+}
+.worksItem .line2{
+  font-size: 14px;
+}
+@media (max-width:992px){
+  .worksItem-cover{
+    width:200px;
+    height: 200px;
+  }
 }
