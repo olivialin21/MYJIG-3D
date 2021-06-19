@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Navbar from "../components/Navbar"
 import Header from "../components/Header"
 import BG from "../components/BG"
@@ -6,12 +7,21 @@ import Steps from "../components/Steps"
 import Footer from "../components/Footer"
 
 function Home() {
+  const [loading, setLoading] = useState(true);
+  useEffect(()=>{
+    setLoading(false);
+  },[])
+
   return (
     <>
     <Navbar />
     <Header />
     <BG />
-    <AboutUs />
+    {loading ? 
+      <></>
+      : 
+      <AboutUs />
+    }
     <Steps />
     <Footer />
     </>

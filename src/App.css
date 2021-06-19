@@ -508,12 +508,21 @@ a{
   position: relative;
   width: 250px;
   height: 250px;
+  overflow: hidden;
 }
 .worksItem img{
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1);
+  transition: all 0.4s;
+
+}
+.worksItem-cover:hover img{
+  transform: scale(1.2);
+  transition: all 0.4s;
+
 }
 .worksItem .info {
   display: flex;
@@ -544,7 +553,102 @@ a{
 }
 @media (max-width:992px){
   .worksItem-cover{
-    width:200px;
+    width: 200px;
     height: 200px;
   }
+}
+
+/* WORK */
+.workAlbum{
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.workAlbum-back{
+  display: flex;
+  font-size: 16px;
+  color: #FFF;
+}
+.workAlbum-back img{
+  margin-right: 5px;
+}
+.workAlbum-back span{
+  position: relative;
+}
+.workAlbum-back span::before{
+  content:"";
+  position:absolute;
+  z-index: 9;
+  height: 2px;
+  width: 0;
+  background-color: #FFD645;
+  bottom: -3px;
+  left: 0;
+  transition: all 0.4s;
+}
+.workAlbum-back span:hover::before{
+  width: 100%;
+  transition: all 0.4s;
+}
+.workAlbum-work{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto;
+  margin-bottom: 50px;
+  width: 100%;
+}
+.workAlbum-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 968px;
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+  margin-bottom:30px;
+}
+.workAlbum-title:before{
+  content:'';
+  position: absolute;
+  width: calc(100% + 15px);
+  height: calc(100% + 10px);
+  left: 0;
+  top: 0;
+  border: 2px #8F8F8F solid;
+}
+.workAlbum-title:after{
+  content:'';
+  position: absolute;
+  width: calc(100% + 15px);
+  height: calc(100% + 10px);
+  left: -15px;
+  top: -10px;
+  border: 2px #fff solid;
+}
+.workAlbum-title-name{
+  font-weight: bold;
+  font-size: 36px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+.workAlbum-title-photoNum{
+  font-size: 14px;
+  margin: 0;
+}
+.workAlbum-works{
+  width: 100%;
+  margin:0 10px;
+}
+.workAlbum-img{
+  margin-top: 20px;
+  max-height: 300px;
+  max-width: 300px;
+}
+.workAlbum-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

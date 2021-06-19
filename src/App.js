@@ -16,8 +16,8 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/works" component={Works} />
-          {/* <Route path="/works/:worksId" component={Work} /> */}
+          <Route exact path="/works" component={Works} />
+          <Route path="/works/:workId" component={Work} />
           <Route path="/create" component={Create} />
         </Switch>
       </BrowserRouter>
