@@ -1,4 +1,4 @@
-import imgCover from "../images/cover.svg"
+import imgCover from "../images/cover.jpg"
 import imgLightY from "../images/light_y.svg"
 import imgLightN from "../images/light_n.svg"
 

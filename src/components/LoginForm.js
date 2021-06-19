@@ -22,7 +22,7 @@ export default function LoginForm() {
   // }, [ userInfo ]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return(
-    <div className="commonForm loginForm mt57">
+    <div className="commonForm loginForm mt75">
       <div className="loginForm-title">
         <p>Log in with your</p>
         <img src={imgLogo} alt="logo"/>
@@ -42,18 +42,16 @@ export default function LoginForm() {
           <label className="form-check-label" for="exampleCheck1">Remember Me</label>
         </div>
         <button type="submit">LOG IN</button>
-        <p></p>
       </form>
-      {/* {error === "" ? (
-          <></>
-        ) : (
-          <div className="login-form__error-wrap">
-            <h3 className="login-form__error-title">
-              {"  "}There was a problem
-            </h3>
-            <p className="login-form__error-message">{error}</p>
-          </div>
-        )} */}
+      <p className="loginForm-create">
+        New here?
+        <Link to="/register">
+          <span> Create an account &gt;&gt;</span>
+        </Link>
+      </p>
+      <p className="loginForm-password">
+        Forgot password?
+      </p>
     </div>
     
   );
