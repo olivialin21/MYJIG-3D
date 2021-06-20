@@ -10,7 +10,8 @@ import {
   FAIL_REGISTER_REQUEST,
   BEGIN_POST_CREATE,
   SUCCESS_POST_CREATE,
-  FAIL_POST_CREATE
+  FAIL_POST_CREATE,
+  SET_POST_LIST
 } from "../utils";
 
 export const StoreContext = createContext();
@@ -37,7 +38,10 @@ const initialState = {
     loading: false,
     success: false,
     error: null,
-  }
+  },
+  page: {
+    posts: [],
+  },
 }
 
   function reducer(state, action) {
@@ -135,7 +139,15 @@ const initialState = {
           ...state.postInfo,
           loading: false,
           success: false,
-          error: "error",
+          error: action.payload,
+        },
+      };
+    case SET_POST_LIST:
+      return {
+        ...state,
+        page: {
+          ...state.page,
+          ...action.payload
         },
       };
     default:

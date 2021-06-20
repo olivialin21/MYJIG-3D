@@ -106,20 +106,37 @@ export const updateUserInfoApi = async (email, password, displayName) => {
 }
 
 export const createPost = async (content) => {
-  const user = auth.currentUser.uid;
+  const user = auth.currentUser.displayName;
+  const email = auth.currentUser.email;
   const time = firebase.firestore.FieldValue.serverTimestamp();
   const PostsRef = await allPostsCollectionRef.doc();
+  const id = PostsRef.id;
+  const applications = 0;
   // Store Data for Aggregation Queries
   await PostsRef.set({
     ...content,
+    id,
     time,
-    user
+    user,
+    applications,
+    email
   });
-  return { ...content };
+  return { ...content, id };
+}
+
+export const getPosts = async () => {
+  let posts = [];
+  let querySnapshot = await allPostsCollectionRef.get();
+  querySnapshot.forEach((doc) => {
+    posts.push(doc.data());
+  });
+  return posts;
 }
 
 // export const getOrderById = async (orderId) => {
-//   const doc = await allOrdersCollectionRef.doc(orderId).get();
+//   const doc = await allPostsCollectionRef.onSnapshot( querySnapshot => {
+
+//   });
 //   return doc.data()
 // }
 
