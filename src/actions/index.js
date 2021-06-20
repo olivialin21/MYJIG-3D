@@ -6,14 +6,18 @@ import{
   REMEMBER_LOGIN,
   BEGIN_REGISTER_REQUEST,
   SUCCESS_REGISTER_REQUEST,
-  FAIL_REGISTER_REQUEST
+  FAIL_REGISTER_REQUEST,
+  BEGIN_POST_CREATE,
+  SUCCESS_POST_CREATE,
+  FAIL_POST_CREATE
 } from "../utils"
 
 import {
   signInWithEmailPassword,
   checkLoginApi,
   registerWithEmailPassword,
-  signOut
+  signOut,
+  createPost
 } from "../api";
 
 export const checkLogin = (dispatch) => {
@@ -74,4 +78,21 @@ export const registerToFirebase = async (dispatch, userInfo) => {
     console.log(e)
     return null;
   }
+}
+
+export const postRequest = async (dispatch, content) => {
+  dispatch({ type: BEGIN_POST_CREATE });
+  try {  
+    await createPost(content);
+    dispatch({ 
+      type: SUCCESS_POST_CREATE, 
+      // payload: postInfo 
+    });
+    // return postInfo;
+    console.log("sus")
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: FAIL_POST_CREATE, payload: error });
+    // return null;
+  }  
 }

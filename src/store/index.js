@@ -7,7 +7,10 @@ import {
   REMEMBER_LOGIN,
   BEGIN_REGISTER_REQUEST,
   SUCCESS_REGISTER_REQUEST,
-  FAIL_REGISTER_REQUEST
+  FAIL_REGISTER_REQUEST,
+  BEGIN_POST_CREATE,
+  SUCCESS_POST_CREATE,
+  FAIL_POST_CREATE
 } from "../utils";
 
 export const StoreContext = createContext();
@@ -30,6 +33,11 @@ const initialState = {
     userInfo: null,
     error: "",
   },
+  postInfo: {
+    loading: false,
+    success: false,
+    error: null,
+  }
 }
 
   function reducer(state, action) {
@@ -99,6 +107,35 @@ const initialState = {
           loading: false,
           userInfo: null,
           error: action.payload,
+        },
+      };
+    case BEGIN_POST_CREATE:
+      return {
+        ...state,
+        postInfo: {
+          ...state.postInfo,
+          loading: true,
+          success: false,
+        }
+      };
+    case SUCCESS_POST_CREATE:
+      return {
+        ...state,
+        postInfo: {
+          ...state.postInfo,
+          loading: false,
+          success: true,
+          error: null,
+        },
+      };
+    case FAIL_POST_CREATE:
+      return {
+        ...state,
+        postInfo: {
+          ...state.postInfo,
+          loading: false,
+          success: false,
+          error: "error",
         },
       };
     default:

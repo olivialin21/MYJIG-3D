@@ -667,3 +667,28 @@ a{
   height: 100%;
   object-fit: cover;
 }
+
+/* CREATE */
+.postForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:50px auto;
+}
+.postForm-form{
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  width: 100%;
+}
+.postForm-form textarea{
+  resize:none;
+  width:100%;
+  height:120px;
+  background-color: #C4C4C4;
+}
+.postForm-form button{
+  align-self: center;
+  max-width: 200px;
+  margin-top: 30px;
+}

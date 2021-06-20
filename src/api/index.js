@@ -16,9 +16,9 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 // ENABLE DATA PERSISTANCE
-// firebase.firestore().settings({
-//   cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
-// });
+firebase.firestore().settings({
+  cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
+});
 const store = firebase.firestore();
 store.enablePersistence()
 .catch(function(err) {
@@ -40,7 +40,7 @@ store.enablePersistence()
 // const productsCollectionRef = store.collection("products");
 // const productsDocRef = productsCollectionRef.doc("json");
 // const allProductsCollectionRef = productsDocRef.collection("allProducts");
-// const allOrdersCollectionRef = store.collection("allOrders");
+const allPostsCollectionRef = store.collection("Posts");
 
 //REFERENCE AUTH
 const auth = firebase.auth();
@@ -105,18 +105,18 @@ export const updateUserInfoApi = async (email, password, displayName) => {
   return user;
 }
 
-// export const createOrderApi = async (order) => {
-//   const user = auth.currentUser.uid;
-//   const orderRef = await allOrdersCollectionRef.doc();
-//   const id = orderRef.id;
-//   // Store Data for Aggregation Queries
-//   await orderRef.set({
-//     ...order,
-//     id,
-//     user
-//   });
-//   return { ...order, id };
-// }
+export const createPost = async (content) => {
+  const user = auth.currentUser.uid;
+  const time = firebase.firestore.FieldValue.serverTimestamp();
+  const PostsRef = await allPostsCollectionRef.doc();
+  // Store Data for Aggregation Queries
+  await PostsRef.set({
+    ...content,
+    time,
+    user
+  });
+  return { ...content };
+}
 
 // export const getOrderById = async (orderId) => {
 //   const doc = await allOrdersCollectionRef.doc(orderId).get();
