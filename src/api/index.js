@@ -161,3 +161,15 @@ export const checkLoginApi = () => {
   return user.uid?  true : false;
 }
 
+export const sendEmailToClient = (emailInfo) => {
+  const user = auth.currentUser.displayName;
+  window.Email.send({
+    SecureToken : "4738c97c-7c45-4518-911b-90bc8a13e726",
+    To : emailInfo.emailTo,
+    From : "myjig.3d.official@gmail.com",
+    Subject : user+" apply to your idea! Let's light it up!",
+    Body : emailInfo.requirement
+  }).then(
+    message => alert(message)
+  );
+}

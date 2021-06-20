@@ -9,7 +9,7 @@ export default function Footer() {
         <p>Tel <span>//</span> +886-2-2732-1104</p>
       </div>
       <div className="footer-info">
-        <p>E-mail <span>//</span> gegeu3u@gmail.com</p>
+        <p>E-mail <span>//</span> myjig.3d.official@gmail.com</p>
       </div>
       <div className="footer-info">
         <p>Address <span>//</span> No.134, Sec. 2, Heping E. Rd., Da-an District, Taipei City 106, Taiwan (R.O.C.)</p>

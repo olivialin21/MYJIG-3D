@@ -19,7 +19,8 @@ import {
   registerWithEmailPassword,
   signOut,
   createPost,
-  getPosts
+  getPosts,
+  sendEmailToClient
 } from "../api";
 
 export const checkLogin = (dispatch) => {
@@ -104,4 +105,12 @@ export const setPostList = async (dispatch) => {
     type: SET_POST_LIST,
     payload: { posts },
   });
+}
+
+export const sendEmail = async (dispatch, emailInfo) => {
+  await sendEmailToClient(emailInfo);
+  // dispatch({
+  //   type: SET_POST_LIST,
+  //   payload: { posts },
+  // });
 }
