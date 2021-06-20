@@ -4,7 +4,10 @@ import {
   BEGIN_LOGIN_REQUEST,
   SUCCESS_LOGIN_REQUEST,
   FAIL_LOGIN_REQUEST,
-  REMEMBER_LOGIN
+  REMEMBER_LOGIN,
+  BEGIN_REGISTER_REQUEST,
+  SUCCESS_REGISTER_REQUEST,
+  FAIL_REGISTER_REQUEST
 } from "../utils";
 
 export const StoreContext = createContext();
@@ -32,7 +35,6 @@ const initialState = {
   function reducer(state, action) {
   switch (action.type) {
     case LOGOUT_REQUEST:
-      // cartItems = [];
       return {
         ...state,
         userSignin: {
@@ -68,6 +70,35 @@ const initialState = {
         userSignin: {
           ...state.userSignin,
           remember: action.payload,
+        },
+      };
+    case BEGIN_REGISTER_REQUEST:
+      return {
+        ...state,
+        userRegister: { ...state.userRegister, loading: true },
+      };
+    case SUCCESS_REGISTER_REQUEST:
+      return {
+        ...state,
+        userRegister: {
+          ...state.userRegister,
+          loading: false,
+          userInfo: action.payload,
+          error: "",
+        },
+        userSignin: {
+          ...state.userSignin,
+          userInfo: action.payload,
+        },
+      };
+    case FAIL_REGISTER_REQUEST:
+      return {
+        ...state,
+        userRegister: {
+          ...state.userRegister,
+          loading: false,
+          userInfo: null,
+          error: action.payload,
         },
       };
     default:

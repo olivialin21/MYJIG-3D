@@ -6,20 +6,26 @@ import imgLogo from "../images/logo.svg"
 
 export default function LoginForm() {
   const { state:{ userSignin: { userInfo, loading, error, remember } }, dispatch } = useContext(StoreContext);
-  // const history = useHistory();
+  const history = useHistory();
 
-  // const onFinish = async (values) => {
-  //   console.log('Received values of form: ', values);
-  //   await loginToFirebase(dispatch, values);
-  // };
+  const onFinish = (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    let userInfo = {
+      email: email.value,
+      password: password.value,
+    };
+    loginToFirebase(dispatch, userInfo);
+  };
 
   // const onChange = e => {
   //   rememberLoginUser(dispatch, e.target.checked);
   // }
 
-  // useEffect(() => {    
-  //   if( userInfo && checkLogin(dispatch) ) history.push(redirect);
-  // }, [ userInfo ]);// eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {    
+    if( userInfo && checkLogin(dispatch) ) history.push("/create");
+  }, [ userInfo ]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return(
     <div className="commonForm loginForm mt75">
@@ -31,17 +37,17 @@ export default function LoginForm() {
       <form className="commonForm-form">
         <div className="form-group commonForm-block">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" className="form-control" id="exampleInputEmail1" />
+          <input type="email" className="form-control" id="email" />
         </div>
         <div className="form-group commonForm-block mb-1">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" className="form-control" id="exampleInputPassword1" />
+          <input type="password" className="form-control" id="password" />
         </div>
         <div className="form-group form-check mb-5 ml-1">
           <input type="checkbox" className="form-check-input" id="exampleCheck1" />
           <label className="form-check-label" for="exampleCheck1">Remember Me</label>
         </div>
-        <button type="submit">LOG IN</button>
+        <button type="submit" onClick={onFinish}>LOG IN</button>
       </form>
       <p className="loginForm-create">
         New here?
@@ -56,117 +62,3 @@ export default function LoginForm() {
     
   );
 }
-
-
-// const LoginCard = ({ redirect }) => {
-//   const { state:{ userSignin: { userInfo, loading, error, remember } }, dispatch } = useContext(StoreContext);
-//   const [form] = Form.useForm();
-//   const history = useHistory();
- 
-//   const onFinish = async (values) => {
-//     console.log('Received values of form: ', values);
-//     await loginToFirebase(dispatch, values);
-//   };
-
-//   const onChange = e => {
-//     rememberLoginUser(dispatch, e.target.checked);
-//   }
-
-//   useEffect(() => {    
-//     if( userInfo && checkLogin(dispatch) ) history.push(redirect);
-//   }, [ userInfo ]);// eslint-disable-line react-hooks/exhaustive-deps
-
-//   return (
-//     <Form
-//       name="normal_login"
-//       className="login-form"
-//       form={form}
-//       initialValues={{
-//         remember: true,
-//       }}
-//       onFinish={onFinish}
-//     >
-//       <Form.Item
-//         name="email"
-//         rules={[
-//           {
-//             type: "email",
-//             message: "The input is not valid E-mail!",
-//           },
-//           {
-//             required: true,
-//             message: "Please input your E-mail!",
-//           },
-//         ]}
-//         hasFeedback
-//       >
-//         <Input
-//           prefix={<MailOutlined className="site-form-item-icon" />}
-//           placeholder="E-Mail"
-//         />
-//       </Form.Item>
-//       <Form.Item
-//         name="password"
-//         rules={[
-//           {
-//             required: true,
-//             message: "Please input your Password!",
-//           },
-//         ]}
-//         hasFeedback
-//       >
-//         <Input.Password
-//           prefix={<LockOutlined className="site-form-item-icon" />}
-//           type="password"
-//           placeholder="Password"
-//         />
-//       </Form.Item>
-//       <Form.Item>
-//         <Form.Item
-//           name="remember"
-//           noStyle
-//         >
-//           <Checkbox onChange={onChange} checked={remember}>Remember me</Checkbox>
-//         </Form.Item>
-
-//         <Link className="login-form__forgot" to={"/"}>
-//           Forgot password
-//         </Link>
-//       </Form.Item>
-
-//       <Form.Item>
-//         {loading ? (
-//           <Button
-//             type="primary"
-//             htmlType="submit"
-//             className="login-form__button"
-//             loading
-//           >
-//             Log in
-//           </Button>
-//         ) : (
-//           <Button
-//             type="primary"
-//             htmlType="submit"
-//             className="login-form__button"
-//           >
-//             Log in
-//           </Button>
-//         )}
-//         Or <Link to={"/register?redirect=shipping"}>register now!</Link>
-//         {error === "" ? (
-//           <></>
-//         ) : (
-//           <div className="login-form__error-wrap">
-//             <h3 className="login-form__error-title">
-//               <WarningOutlined className="site-form-item-icon" />
-//               {"  "}There was a problem
-//             </h3>
-//             <p className="login-form__error-message">{error}</p>
-//           </div>
-//         )}
-//       </Form.Item>
-//     </Form>
-//   );
-// };
-// export default LoginCard;

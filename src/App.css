@@ -248,6 +248,10 @@ a{
   display: flex;
   justify-content: center;
 }
+.header-yellow{
+  cursor: pointer;
+  color:#FFD645;
+}
 .header-yellow a{
   color:#FFD645;
 }
@@ -407,6 +411,7 @@ a{
   margin-top: 50px;
 }
 .commonForm p span{
+  cursor: pointer;
   color:#FFD645;
 }
 .commonForm button{

@@ -1,15 +1,34 @@
+import React, { useContext } from "react";
+import { StoreContext } from "../store"
+import { registerToFirebase } from '../actions'
+
 export default function RegisterForm() {
+  const { dispatch } = useContext(StoreContext);
+
+  const onFinish = (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const name = document.getElementById("name");
+    let userInfo = {
+      email: email.value,
+      password: password.value,
+      name: name.value
+    };
+    registerToFirebase(dispatch, userInfo);
+  };
+
   return(
     <div className="commonForm mt75">
       <p className="registerForm-title">Join us !</p>
       <form className="commonForm-form">
         <div className="form-group commonForm-block">
           <label for="exampleInputEmail1">Email</label>
-          <input type="email" className="form-control" id="exampleInputEmail1" />
+          <input type="email" className="form-control" id="email" />
         </div>
         <div className="form-group commonForm-block">
           <label for="exampleInputPassword1">Phone Number</label>
-          <input type="tel" className="form-control" id="exampleInputPassword1"/>
+          <input type="tel" className="form-control" id="phoneNum"/>
         </div>
         <div className="form-group commonForm-block">
           <label for="exampleInputPassword1">SMS verification code</label>
@@ -17,11 +36,11 @@ export default function RegisterForm() {
         </div>
         <div className="form-group commonForm-block">
           <label for="exampleInputPassword1">Anonymous ID</label>
-          <input type="text" className="form-control" id="exampleInputPassword1" placeholder="Length must be less than 16 characters" maxLength="16"/>
+          <input type="text" className="form-control" id="name" placeholder="Length must be less than 16 characters" maxLength="16"/>
         </div>
         <div className="form-group commonForm-block">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Length must be greater than 6 characters" minLength="6"/>
+          <input type="password" className="form-control" id="password" placeholder="Length must be greater than 6 characters" minLength="6"/>
         </div>
         <div className="form-group commonForm-block">
           <label for="exampleInputPassword1">Confirm Password</label>
@@ -32,7 +51,7 @@ export default function RegisterForm() {
           <input type="date" className="form-control" id="exampleInputPassword1" />
         </div>
         <p>By clicking the Continue button below, you accept the MyJig 3D <span>Terms of Use</span> and <span>Privacy Policy</span>.</p>
-        <button type="submit">CONTINUE</button>
+        <button type="submit" onClick={onFinish}>CONTINUE</button>
       </form>
     </div>
   );
