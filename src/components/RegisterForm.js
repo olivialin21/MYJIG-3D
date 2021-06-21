@@ -6,6 +6,7 @@ import { registerToFirebase, checkLogin, saveToFirestore } from '../actions'
 export default function RegisterForm() {
   const { state: { userSignin : { userInfo } }, dispatch } = useContext(StoreContext);
   const history = useHistory();
+
   const email = document.getElementById("email");
   const phoneNum = document.getElementById("phoneNum");
   const name = document.getElementById("name");
@@ -32,25 +33,44 @@ export default function RegisterForm() {
 
   const onFinish = (e) => {
     e.preventDefault();
-    if (email.value != '' && phoneNum.value != '' && name.value != '' && password.value != '' && password2.value != '' && birthday.value != ''){
-      if(password.value==password2.value){
-        let registerInfo = {
-          email: email.value,
-          password: password.value,
-          name: name.value
-        };
-        let userInfoSave = {
-          email: email.value,
-          password: password.value,
-          name: name.value,
-          phoneNum: phoneNum.value,
-          birthday: birthday.value
-        }
-        registerToFirebase(dispatch, registerInfo);
-        // saveToFirestore(dispatch, userInfoSave)
-      } else {
-        password2.classList.add("bdr");
-      }
+    const registerInfo = {
+      email: email.value,
+      password: password.value,
+      name: name.value,
+      phoneNum: phoneNum.value,
+      birthday: birthday.value
+    }
+    const passwordCheck = password2.value
+    
+    if(password.value===passwordCheck){
+      registerToFirebase(dispatch, registerInfo);
+    } else {
+      password2.classList.add("bdr");
+    }
+    if (registerInfo.email.length == '') {
+      email.classList.add("bdr");
+    } else {
+      email.classList.remove("bdr");
+    }
+    if (registerInfo.password.length == ''){
+      password.classList.add("bdr");
+    } else {
+      password.classList.remove("bdr");
+    }
+    if (registerInfo.name.length == ''){
+      name.classList.add("bdr");
+    } else {
+      name.classList.remove("bdr");
+    }
+    if (registerInfo.phoneNum.length == ''){
+      phoneNum.classList.add("bdr");
+    } else {
+      phoneNum.classList.remove("bdr");
+    }
+    if (registerInfo.birthday.length == ''){
+      birthday.classList.add("bdr");
+    } else {
+      birthday.classList.remove("bdr");
     }
   };
 

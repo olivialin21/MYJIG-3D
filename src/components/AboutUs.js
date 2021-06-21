@@ -1,5 +1,6 @@
 import imgCover from "../images/cover.jpg"
 import imgLightY from "../images/light_y.svg"
+import imgLightYLine from "../images/light_yLine.svg"
 import imgLightN from "../images/light_n.svg"
 
 export default function AboutUs() {
@@ -25,7 +26,7 @@ export default function AboutUs() {
         </div>
       </div>
       <div className="aboutUs-line"></div>
-      <div className="aboutUs-Info">
+      <div className="aboutUs-Info animate__animated animate__fadeInUp">
         <p className="aboutUs-Info-title"><span>// </span>About MyJig 3D</p>
         <div className="aboutUs-Info-content">
           MyJig 3D is an 3D modeling website dedicated to matching clients and creators. We also have a prominent team to provide decent service, so we can undertake big cases. 
@@ -33,19 +34,24 @@ export default function AboutUs() {
           Founded in 2021, Taiwan, MyJig 3D is still growing, and keep hiring some creator with great evaluation. 
         </div>
       </div>
-      <div className="aboutUs-Info">
+      <div className="aboutUs-Info animate__animated animate__fadeInUp">
         <p className="aboutUs-Info-title"><span>// </span>Why MyJig 3D</p>
         <div className="aboutUs-Info-content">
           Because of the pronunciation, it is similar to ”intermediary” in Chinese. Also, we hope we can light your ideas up and make it jig like magic!  
         </div>
       </div>
       <div className="aboutUs-slogan">
-        <img src={imgLightN} alt="cover" />
-        <p>
-          Don’t waste your ideas!!<br/>
-          No matter what you want, We will light it up!!
-        </p>
-        <img src={imgLightY} alt="cover" />
+        <div className="aboutUs-slogan-animate aboutUs-slogan-animate1">
+          <img className="aboutUs-slogan-imgLight" src={imgLightN} alt="cover" />
+          <p>
+            Don’t waste your ideas!!<br/>
+            No matter what you want, We will light it up!!
+          </p>
+        </div>
+        <div className="aboutUs-slogan-animate aboutUs-slogan-animate2">
+          <img className="aboutUs-slogan-imgLight" src={imgLightY} alt="cover" />
+          <img className="aboutUs-slogan-imgLightLine" src={imgLightYLine} alt="cover" />
+        </div>
       </div>
     </div>
   );

@@ -34,8 +34,8 @@ export default function Apply({post}) {
     <>
       {userInfo ? 
         <>
-          <button data-toggle="modal" data-target="#applyForm">Apply</button>
-          <div className="modal fade" id="applyForm" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <button data-toggle="modal" data-target={post.id}>Apply</button>
+          <div className="modal fade" id={post.id} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered apply-modal" role="document">
               <div className="modal-content apply-modal-block">
                 <div className="modal-header apply-modal-header">
