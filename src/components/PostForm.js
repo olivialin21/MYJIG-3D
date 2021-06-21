@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
+import { Link } from 'react-router-dom';
 import { StoreContext } from "../store"
 import { postRequest } from '../actions'
 
 export default function PostForm() {
-  const { dispatch } = useContext(StoreContext);
+  const { state: { userSignin : { userInfo } }, dispatch } = useContext(StoreContext);
+
   const onPost = (e) => {
     e.preventDefault();
     const title = document.getElementById("title");
@@ -16,7 +18,16 @@ export default function PostForm() {
       postRequest(dispatch, content);
       document.getElementById("form").reset();
     } else {
-      alert("尚有空格")
+      if (content.title.length == '') {
+        title.classList.add("bdr");
+      } else {
+        title.classList.remove("bdr");
+      }
+      if (content.requirement.length == ''){
+        requirement.classList.add("bdr");
+      } else {
+        requirement.classList.remove("bdr");
+      }
     }
   }  
 
@@ -25,13 +36,19 @@ export default function PostForm() {
       <form className="postForm-form" id="form">
         <div className="form-group commonForm-block">
           <label for="exampleInputEmail1">Title</label>
-          <input type="email" className="form-control" id="title" />
+          <input type="text" className="form-control" id="title" />
         </div>
         <div className="form-group commonForm-block mb-1">
           <label for="exampleInputPassword1">Requirement</label>
           <textarea className="form-control" id="requirement" />
         </div>
-        <button type="submit" onClick={onPost}>POST</button>
+        {userInfo ? 
+          <button type="submit" onClick={onPost}>POST</button>
+        :
+          <Link to="/login">
+            <button>POST</button>
+          </Link>  
+        }
       </form>
     </div>
   );

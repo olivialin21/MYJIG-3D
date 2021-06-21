@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { StoreContext } from "../store"
 import { logoutFromFirebase } from '../actions'
 import imgLogo from "../images/logo.svg"
@@ -9,18 +9,11 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 export default function Header() {
-  const { state: { userSignin : { userInfo, remember } }, dispatch } = useContext(StoreContext);
+  const { state: { userSignin : { userInfo } }, dispatch } = useContext(StoreContext);
 
   const onLogOut = () => {
     logoutFromFirebase(dispatch);
   }
-
-  useEffect(() => {
-    if(remember)
-       localStorage.setItem("userInfo", JSON.stringify(userInfo));
-    else
-     localStorage.removeItem("userInfo");
-  }, [userInfo, remember]);
 
   return(
     <header id="home" className="header">
@@ -50,9 +43,7 @@ export default function Header() {
         <div className="header-navItem header-icnIg"><img src={imgIg} alt="icn_Ig"/></div>
         {userInfo ? 
           <span className="header-navItem header-yellow" onClick={onLogOut}>
-            {/* <Link to="/login"> */}
             Hi, {userInfo.displayName}
-            {/* </Link> */}
           </span>
           :    
           <>

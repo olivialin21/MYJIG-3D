@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { StoreContext } from "../store"
+import { logoutFromFirebase } from '../actions'
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import imgLogo from "../images/logo.svg"
@@ -7,12 +8,16 @@ import imgFb from "../images/icn_fb.svg"
 import imgIg from "../images/icn_ig.svg"
 
 export default function Navbar() {
-  const { state: { userSignin : { userInfo, remember } } } = useContext(StoreContext);
+  const { state: { userSignin : { userInfo, remember } } , dispatch } = useContext(StoreContext);
   const [offsetX, setOffsetX] = useState(window.innerWidth);
   const [offsetY, setOffsetY] = useState(0);
   const [hamToggle, toggleChange] = useState(false);
 
   const clickHam = () => toggleChange(!hamToggle);
+
+  const onLogOut = () => {
+    logoutFromFirebase(dispatch);
+  }
 
   useEffect(() => {
     window.onresize = () => {
@@ -64,10 +69,8 @@ export default function Navbar() {
           <div className="header-navItem header-icnFb"><img src={imgFb} alt="icn_fb" /></div>
           <div className="header-navItem header-icnIg"><img src={imgIg} alt="icn_Ig"/></div>
           {userInfo ? 
-            <span className="header-navItem header-yellow">
-              {/* <Link to="/login"> */}
+            <span className="header-navItem header-yellow" onClick={onLogOut}>
               Hi, {userInfo.displayName}
-              {/* </Link> */}
             </span>
             :    
             <>
@@ -83,7 +86,6 @@ export default function Navbar() {
               </span>
             </>       
           }
-
         </div>
       </div>
     </nav>

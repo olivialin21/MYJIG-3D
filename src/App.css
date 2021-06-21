@@ -687,9 +687,15 @@ a{
   height:120px;
   background-color: #C4C4C4;
 }
+.postForm-form a{
+  align-self: center;
+  max-width: 200px;
+  width: 100%;
+}
 .postForm-form button{
   align-self: center;
   max-width: 200px;
+  width: 100%;
   margin-top: 30px;
 }
 
@@ -739,6 +745,9 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.postItem-blockR a{
+  width: 100%;
 }
 .postItem-blockR button{
   position: relative;
@@ -930,4 +939,11 @@ a{
 .apply-modal-footer p{
   position: absolute;
   z-index: 999;
+}
+
+/* WARNING */
+.bdr{
+  transition:all 0.2s;
+  border: 2px rgb(207, 71, 71) solid;
+  border-radius: .25rem;
 }

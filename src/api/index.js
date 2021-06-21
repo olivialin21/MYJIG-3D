@@ -1,3 +1,4 @@
+import emailjs from 'emailjs-com';
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
@@ -161,15 +162,23 @@ export const checkLoginApi = () => {
   return user.uid?  true : false;
 }
 
-export const sendEmailToClient = (emailInfo) => {
-  const user = auth.currentUser.displayName;
-  window.Email.send({
-    SecureToken : "4738c97c-7c45-4518-911b-90bc8a13e726",
-    To : emailInfo.emailTo,
-    From : "myjig.3d.official@gmail.com",
-    Subject : user+" apply to your idea! Let's light it up!",
-    Body : emailInfo.requirement
-  }).then(
-    message => alert(message)
-  );
+export const sendEmailToClient = (emailInfo) => { 
+  let templateParams = {
+    "client_name": emailInfo.name,
+    "creator_name": auth.currentUser.displayName,
+    "title" : emailInfo.title,
+    "message" : emailInfo.applyContent,
+    "client_email": emailInfo.emailTo
+  }
+
+  const service_id = 'default_service';
+  const template_id = 'myjig3d';
+  let userID = "user_eyNcfozLP0P4wI4wui3te"
+  emailjs.send(service_id, template_id, templateParams,userID)
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+    })
+    .catch((error) => {
+      console.log('FAILED...', error);
+    })
 }
