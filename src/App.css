@@ -336,6 +336,12 @@ a{
   margin-bottom: 0;
   text-align: end;
 }
+@media(max-width:768px){
+  .footer{
+    padding: 40px 16px 0 16px;
+    font-size: 10px;
+  }
+}
 
 /* HOME */
 .home-section{
@@ -597,6 +603,7 @@ a{
   .steps{
     height: auto;
     align-items: center;
+    margin-bottom: 0px;
   }
   .steps-block{
     position: static;
@@ -685,6 +692,11 @@ a{
 .commonForm-block input{
   background-color: #C4C4C4;
 }
+@media(max-width:768px){
+  .commonForm-form{
+    max-width: 270px;
+  }
+}
 
 /* REGISTER */
 .registerForm-title{
@@ -692,6 +704,11 @@ a{
   font-weight: bold;
   margin-top: 0 !important;
   margin-bottom: 50px;
+}
+@media(max-width:768px){
+  .registerForm-title{
+    font-size: 20px;
+  }
 }
 
 /* LOGIN */
@@ -723,6 +740,21 @@ a{
   font-size: 18px;
   margin: 8px 0 0 0 !important;
   color: #999999;
+}
+@media(max-width:768px){
+  .loginForm-title p{
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .loginForm-title img{
+    height: 26px;
+  }
+  .loginForm-create{
+    font-size: 18px;
+  }
+  .loginForm-password{
+    font-size: 12px;
+  }
 }
 
 /* WORKS */
