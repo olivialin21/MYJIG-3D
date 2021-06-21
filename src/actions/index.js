@@ -109,8 +109,4 @@ export const setPostList = async (dispatch) => {
 
 export const sendEmail = async (dispatch, emailInfo) => {
   await sendEmailToClient(emailInfo);
-  // dispatch({
-  //   type: SET_POST_LIST,
-  //   payload: { posts },
-  // });
 }

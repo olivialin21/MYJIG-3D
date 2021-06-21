@@ -10,7 +10,7 @@ export default function WorkAlbum({work}) {
   },[])
 
   return(
-    <div className="container-fluid workAlbum mt75">
+    <div className="workAlbum mt75">
       {loading ? 
         <></>
         : 

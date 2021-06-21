@@ -13,6 +13,7 @@ export default function Apply({post}) {
         name:post.user,
         emailTo: post.email,
         title: post.title,
+        id:post.id,
         applyContent
       };
       sendEmail(dispatch, emailInfo);
@@ -34,8 +35,8 @@ export default function Apply({post}) {
     <>
       {userInfo ? 
         <>
-          <button data-toggle="modal" data-target={post.id}>Apply</button>
-          <div className="modal fade" id={post.id} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <button data-toggle="modal" data-target="#modal1" >Apply</button>
+          <div className="modal fade" id="modal1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered apply-modal" role="document">
               <div className="modal-content apply-modal-block">
                 <div className="modal-header apply-modal-header">

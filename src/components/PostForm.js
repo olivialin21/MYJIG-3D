@@ -18,12 +18,12 @@ export default function PostForm() {
       postRequest(dispatch, content);
       document.getElementById("form").reset();
     } else {
-      if (content.title.length == '') {
+      if (content.title.length === '') {
         title.classList.add("bdr");
       } else {
         title.classList.remove("bdr");
       }
-      if (content.requirement.length == ''){
+      if (content.requirement.length === ''){
         requirement.classList.add("bdr");
       } else {
         requirement.classList.remove("bdr");

@@ -13,7 +13,11 @@ export default function PostItem({post}) {
         <div className="postItem-blockR">
           <FollowOrder post={post}/>
           <Apply post={post}/>
-          <p>{post.applications} applications</p>
+          {post.applications > 1 ? 
+            <p>{post.applications} applications</p>
+            :
+            <p>{post.applications} application</p>
+          }
         </div>
       </div>
       <div className="postItem-lineW"></div>

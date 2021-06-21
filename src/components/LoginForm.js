@@ -20,12 +20,12 @@ export default function LoginForm() {
     if (userInfo.email !== '' && userInfo.password !==''){
       loginToFirebase(dispatch, userInfo);
     } else {
-      if (userInfo.email.length == '') {
+      if (userInfo.email.length === '') {
         email.classList.add("bdr");
       } else {
         email.classList.remove("bdr");
       }
-      if (userInfo.password.length == ''){
+      if (userInfo.password.length === ''){
         password.classList.add("bdr");
       } else {
         password.classList.remove("bdr");

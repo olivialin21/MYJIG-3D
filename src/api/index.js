@@ -36,53 +36,8 @@ store.enablePersistence()
     }
 });
 
-
-// REFERENCE PRODUCTS
-// const productsCollectionRef = store.collection("products");
-// const productsDocRef = productsCollectionRef.doc("json");
-// const allProductsCollectionRef = productsDocRef.collection("allProducts");
 const allPostsCollectionRef = store.collection("Posts");
-
-//REFERENCE AUTH
 const auth = firebase.auth();
-
-// export const getProductById = async (productId) => {
-//   // REFERENCE PRODUCTS COLLECTION
-//   const doc = await allProductsCollectionRef.doc(productId).get();
-//   return doc.data()
-// }
-
-// export const getProducts = async (url) => {
-//   const collection = jsonInfo.find(element => element.url === url);
-//   const collectionName = collection.name || "allProducts";
-//   let jsonProducts = [];
-
-//   // QUERY PRODUCTS
-//   let querySnapshot;
-//   if (collectionName === "allProducts")
-//     querySnapshot = await allProductsCollectionRef.get();
-//   else
-//     querySnapshot = await allProductsCollectionRef.where("category", "==", collectionName).get();
-//   querySnapshot.forEach((doc) => {
-//     jsonProducts.push(doc.data());
-//   });
-//   return jsonProducts;
-// }
-
-// export const feedProducts = () => {
-//   products.forEach((product) => {
-//     const docRef = allProductsCollectionRef.doc();
-//     const id = docRef.id;
-//     const user = auth.currentUser.uid;
-
-//     // Store Data for Aggregation Queries
-//     docRef.set({
-//       ...product,
-//       user,
-//       id
-//     });
-//   })
-// }
 
 export const signInWithEmailPassword = async (email, password) => {
   return await auth.signInWithEmailAndPassword(email, password);
@@ -134,25 +89,6 @@ export const getPosts = async () => {
   return posts;
 }
 
-// export const getOrderById = async (orderId) => {
-//   const doc = await allPostsCollectionRef.onSnapshot( querySnapshot => {
-
-//   });
-//   return doc.data()
-// }
-
-// export const getOrderByUser = async () => {
-//   const user = auth.currentUser.uid;
-//   let jsonOrders = [];
-
-//   // QUERY Orders
-//   const querySnapshot = await allOrdersCollectionRef.where("user", "==", user).get();
-//   querySnapshot.forEach((doc) => {
-//     jsonOrders.push(doc.data());
-//   });
-//   return jsonOrders;
-// }
-
 export const signOut = () => {
   auth.signOut();
 }
@@ -162,7 +98,10 @@ export const checkLoginApi = () => {
   return user.uid?  true : false;
 }
 
-export const sendEmailToClient = (emailInfo) => { 
+export const sendEmailToClient = async (emailInfo) => { 
+  const doc = await allPostsCollectionRef.doc(emailInfo.id).get();
+  const applicationsNum = doc.data().applications;
+
   let templateParams = {
     "client_name": emailInfo.name,
     "creator_name": auth.currentUser.displayName,
@@ -177,6 +116,7 @@ export const sendEmailToClient = (emailInfo) => {
   emailjs.send(service_id, template_id, templateParams,userID)
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text);
+      allPostsCollectionRef.doc(emailInfo.id).update("applications", applicationsNum + 1 );
     })
     .catch((error) => {
       console.log('FAILED...', error);
