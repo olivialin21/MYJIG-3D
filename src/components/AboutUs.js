@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import imgCover from "../images/cover.jpg"
 import imgLightY from "../images/light_y.svg"
 import imgLightYLine from "../images/light_yLine.svg"
@@ -12,17 +13,23 @@ export default function AboutUs() {
         <div className="aboutUs-data">
           <p>Creators</p>
           <p>360+</p>
-          <p>Join Us</p>
+          <Link to="/login">
+            <p>Join Us</p>
+          </Link>
         </div>
         <div className="aboutUs-data">
           <p>Ideas</p>
           <p>50000+</p>
-          <p>Post</p>
+          <Link to="/create">
+            <p>Post</p>
+          </Link>
         </div>
         <div className="aboutUs-data">
           <p>Projects</p>
           <p>250+</p>
-          <p>Our Works</p>
+          <Link to="/works">
+            <p>Our Works</p>
+          </Link>
         </div>
       </div>
       <div className="aboutUs-line"></div>

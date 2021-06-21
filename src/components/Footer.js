@@ -16,7 +16,7 @@ export default function Footer() {
       </div>
       <div className="footer-2F">
         <div className="footer-icnFb"><img src={imgFb} alt="icn_fb" /></div>
-        <img src={imgIg} alt="icn_Ig"/>
+        <img className="footer-icnIg" src={imgIg} alt="icn_Ig"/>
         <img className="footer-logo" src={imgLogo} alt="icn_Ig"/>
       </div>
       <p className="footer-copyright">MYJIG 3D ©2021 Copyright All Rights Reserved</p>

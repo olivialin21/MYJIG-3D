@@ -91,6 +91,24 @@ a{
   align-items: center;
   margin-right: 24px;
 }
+.nav-progress{
+  position:absolute;
+  border-radius: 0;
+  background-color: transparent;
+  z-index: 9;
+  height: 3px;
+  width: 100%;
+  top:-10px;
+  transition: all 0.4s;
+}
+.nav-progress-appear{
+  position: fixed;
+  top: 54px;
+  transition: all 0.4s;
+}
+.progress .progress-bar{
+  background-color: #FFD645;
+}
 @media(max-width:992px){
   .navbar-collapse{
     position: absolute;
@@ -298,6 +316,7 @@ a{
   align-items: flex-end;
 }
 .footer-icnFb{
+  cursor: pointer;
   height: 18px;
   width: 18px;
   margin-right: 16px;
@@ -357,6 +376,9 @@ a{
 }
 .aboutUs-data p:nth-child(3){
   font-size: 24px;
+  color:#879595;
+}
+.aboutUs-data a{
   color:#879595;
 }
 .aboutUs-line{
