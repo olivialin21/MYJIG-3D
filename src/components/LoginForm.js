@@ -20,6 +20,7 @@ export default function LoginForm() {
     if (userInfo.email !== '' && userInfo.password !==''){
       loginToFirebase(dispatch, userInfo);
     } else {
+      alert("尚有空格")
       if (userInfo.email.length === '') {
         email.classList.add("bdr");
       } else {
@@ -34,9 +35,12 @@ export default function LoginForm() {
 
   };
 
-  // const onChange = e => {
-  //   rememberLoginUser(dispatch, e.target.checked);
-  // }
+  const onChange = e => {
+    if (document.getElementById('remember').checked) 
+    {
+      rememberLoginUser(dispatch, e.target.checked);
+    }
+  }
 
   useEffect(() => {    
     if( userInfo && checkLogin(dispatch) ) history.push("/create");
@@ -59,8 +63,8 @@ export default function LoginForm() {
           <input type="password" className="form-control" id="password" />
         </div>
         <div className="form-group form-check mb-5 ml-1">
-          <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-          <label className="form-check-label" for="exampleCheck1">Remember Me</label>
+          <input type="checkbox" className="form-check-input" id="remember" checked={remember} onClick={onChange}/>
+          <label className="form-check-label" for="remember">Remember Me</label>
         </div>
         <button type="submit" onClick={onFinish}>LOG IN</button>
       </form>

@@ -57,6 +57,11 @@ export default function RegisterForm() {
     } else {
       password.classList.remove("bdr");
     }
+    if (registerInfo.password2.length == ''){
+      password.classList.add("bdr");
+    } else {
+      password.classList.remove("bdr");
+    }
     if (registerInfo.name.length == ''){
       name.classList.add("bdr");
     } else {

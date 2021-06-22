@@ -17,7 +17,9 @@ export default function PostForm() {
     if (content.title !== '' && content.requirement !==''){
       postRequest(dispatch, content);
       document.getElementById("form").reset();
+      alert("POSTED")
     } else {
+      alert("尚有空格")
       if (content.title.length === '') {
         title.classList.add("bdr");
       } else {

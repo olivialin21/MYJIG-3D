@@ -1,10 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from 'react-router-dom';
 import { StoreContext } from "../store"
 import { sendEmail } from '../actions'
 
 export default function Apply({post}) {
   const { state: { userSignin : { userInfo } }, dispatch } = useContext(StoreContext);
+  const modalId = "#"+post.id;
+  const [isModalOpen,toggleModal] = useState(false);
+
+  const onToggleModal = () => {
+    toggleModal(!isModalOpen);
+  }
 
   const onSubmit = () => {
     const applyContent = document.getElementById("applyContent").value;
@@ -35,8 +41,8 @@ export default function Apply({post}) {
     <>
       {userInfo ? 
         <>
-          <button data-toggle="modal" data-target="#modal1" >Apply</button>
-          <div className="modal fade" id="modal1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <button data-toggle="modal" data-target={modalId} onClick={onToggleModal}>Apply</button>
+          <div className={isModalOpen?"modal show":"modal fade"} id={post.id} role="dialog" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered apply-modal" role="document">
               <div className="modal-content apply-modal-block">
                 <div className="modal-header apply-modal-header">
