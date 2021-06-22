@@ -117,8 +117,10 @@ export const sendEmailToClient = async (emailInfo) => {
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text);
       allPostsCollectionRef.doc(emailInfo.id).update("applications", applicationsNum + 1 );
+      return true;
     })
     .catch((error) => {
       console.log('FAILED...', error);
+      return false;
     })
 }

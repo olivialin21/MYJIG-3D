@@ -108,5 +108,6 @@ export const setPostList = async (dispatch) => {
 }
 
 export const sendEmail = async (dispatch, emailInfo) => {
-  await sendEmailToClient(emailInfo);
+  const consult = await sendEmailToClient(emailInfo);
+  return consult;
 }
