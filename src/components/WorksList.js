@@ -17,7 +17,7 @@ export default function WorksList() {
           : 
           <>
             {works.map( work => (
-              <WorksItem work={work}/>
+              <WorksItem key={work.id} work={work}/>
             ))}
           </>
         }

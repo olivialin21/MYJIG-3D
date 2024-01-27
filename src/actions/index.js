@@ -17,7 +17,7 @@ import {
   signInWithEmailPassword,
   checkLoginApi,
   registerWithEmailPassword,
-  signOut,
+  logOut,
   createPost,
   getPosts,
   sendEmailToClient
@@ -59,7 +59,7 @@ export const rememberLoginUser = (dispatch, remember) => {
 }
 
 export const logoutFromFirebase = async (dispatch) => {
-  signOut();
+  logOut();
   dispatch({ type: LOGOUT_REQUEST });
 }
 

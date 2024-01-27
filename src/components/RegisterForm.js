@@ -36,10 +36,11 @@ export default function RegisterForm() {
     const registerInfo = {
       email: email.value,
       password: password.value,
-      name: name.value,
+      name: "hi",
       phoneNum: phoneNum.value,
       birthday: birthday.value
     }
+    console.log(registerInfo);
     const passwordCheck = password2.value
     
     if(password.value===passwordCheck){
