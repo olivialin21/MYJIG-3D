@@ -30,7 +30,7 @@ export default function WorkAlbum({work}) {
               {work.images.map(image => (
                 <div className="col-6 col-md-4">
                   <div className="workAlbum-img">
-                    <img src={require('../images/works/'+image.imgurl+'.png').default} alt=""/>
+                    <img src={require('../images/works/'+image.imgurl+'.png')} alt=""/>
                   </div>
                 </div>
               ))}
