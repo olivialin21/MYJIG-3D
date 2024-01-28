@@ -14,7 +14,7 @@ export default function PostList() {
       <div className="postList-lineY"></div>
       <p>Sort by：Newest ▼</p>
       {posts.map( post => (
-        <PostItem post = {post}/>
+        <PostItem key={post.id} post = {post}/>
       ))}
     </div>
   );

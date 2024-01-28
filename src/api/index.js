@@ -82,34 +82,35 @@ export const getPosts = async () => {
 
   if (snapshot.exists()) {
     snapshot.forEach((childSnapshot) => {
-      posts.push(childSnapshot.val());
-    });
+      const data = childSnapshot.val();
+      data.id = childSnapshot.key;
+      posts.push(data);
+    })
   }
 
   return posts;
 }
 
-export const sendEmailToClient = async (emailInfo) => { 
-//   let templateParams = {
-//     "client_name": emailInfo.name,
-//     "creator_name": auth.currentUser.displayName,
-//     "title" : emailInfo.title,
-//     "message" : emailInfo.applyContent,
-//     "client_email": emailInfo.emailTo
-//   }
+export const sendEmailToClient = async (emailInfo) => {
+  let templateParams = {
+    "client_name": emailInfo.name,
+    "creator_name": auth.currentUser.displayName,
+    "title": emailInfo.title,
+    "message": emailInfo.applyContent,
+    "client_email": emailInfo.emailTo
+  }
 
-//   const service_id = 'default_service';
-//   const template_id = 'myjig3d';
-//   let userID = "user_eyNcfozLP0P4wI4wui3te"
-//   emailjs.send(service_id, template_id, templateParams,userID)
-//     .then((response) => {
-//       console.log('SUCCESS!', response.status, response.text);
-//       set(ref(database, "student1/name"), "Apple");
-//       .update("applications", applicationsNum + 1 );
-//       return true;
-//     })
-//     .catch((error) => {
-//       console.log('FAILED...', error);
-//       return false;
-//     })
+  const service_id = 'service_d4ntali';
+  const template_id = 'myjig3d';
+  let userID = "oC32Mg4W4sG2VZruE"
+  emailjs.send(service_id, template_id, templateParams, userID)
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      set(ref(database, `Posts/${emailInfo.id}/applications`), emailInfo.applications + 1);
+      return true;
+    })
+    .catch((error) => {
+      console.log('FAILED...', error);
+      return false;
+    })
 }
