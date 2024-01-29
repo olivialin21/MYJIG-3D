@@ -60,19 +60,21 @@ export const createPost = async (content) => {
   const user = auth.currentUser.displayName;
   const email = auth.currentUser.email;
   const time = new Date().getTime();
-  const applications = 0;
+  const applications = null;
 
-  // Store Data
-  await push(ref(database, "Posts"), {
+  const post = {
     requirement: content.requirement,
     title: content.title,
     user,
     email,
     time,
     applications,
-  });
+  }
 
-  return { ...content };
+  // Store Data
+  await push(ref(database, "Posts"), post);
+
+  return { ...post };
 }
 
 export const getPosts = async () => {
@@ -95,18 +97,19 @@ export const sendEmailToClient = async (emailInfo) => {
   let templateParams = {
     "client_name": emailInfo.name,
     "creator_name": auth.currentUser.displayName,
+    "creator_email": auth.currentUser.email,
     "title": emailInfo.title,
     "message": emailInfo.applyContent,
     "client_email": emailInfo.emailTo
   }
 
-  const service_id = 'service_d4ntali';
+  const service_id = 'service_s4b4gev';
   const template_id = 'myjig3d';
   let userID = "oC32Mg4W4sG2VZruE"
   emailjs.send(service_id, template_id, templateParams, userID)
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text);
-      set(ref(database, `Posts/${emailInfo.id}/applications`), emailInfo.applications + 1);
+      push(ref(database, `Posts/${emailInfo.id}/applications`), emailInfo);
       return true;
     })
     .catch((error) => {

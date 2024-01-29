@@ -17,10 +17,7 @@ export default function Apply({post}) {
     const applyContent = document.getElementById(`${applyContentId}`);
     if (applyContent !== null){
       const emailInfo = {
-        name:post.user,
-        emailTo: post.email,
-        title: post.title,
-        id:post.id,
+        ...post,
         applyContent: applyContent.value
       };
       const consult = sendEmail(dispatch, emailInfo);
