@@ -95,13 +95,14 @@ export const getPosts = async () => {
 
 export const sendEmailToClient = async (emailInfo) => {
   let templateParams = {
-    "client_name": emailInfo.name,
+    "client_name": emailInfo.user,
     "creator_name": auth.currentUser.displayName,
     "creator_email": auth.currentUser.email,
     "title": emailInfo.title,
     "message": emailInfo.applyContent,
-    "client_email": emailInfo.emailTo
+    "client_email": emailInfo.email
   }
+  console.log(emailInfo);
 
   const service_id = 'service_s4b4gev';
   const template_id = 'myjig3d';
@@ -110,10 +111,12 @@ export const sendEmailToClient = async (emailInfo) => {
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text);
       push(ref(database, `Posts/${emailInfo.id}/applications`), emailInfo);
+      alert("已成功寄出應徵信！")
       return true;
     })
     .catch((error) => {
       console.log('FAILED...', error);
+      alert("很抱歉，應徵信未成功寄送")
       return false;
     })
 }

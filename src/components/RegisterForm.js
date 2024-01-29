@@ -4,7 +4,7 @@ import { StoreContext } from "../store"
 import { registerToFirebase, checkLogin, saveToFirestore } from '../actions'
 
 export default function RegisterForm() {
-  const { state: { userSignin : { userInfo } }, dispatch } = useContext(StoreContext);
+  const { state: { userSignin: { userInfo } }, dispatch } = useContext(StoreContext);
   const history = useHistory();
 
   const email = document.getElementById("email");
@@ -15,35 +15,33 @@ export default function RegisterForm() {
   const birthday = document.getElementById("birthday");
 
   useEffect(() => {
-    if( userInfo && checkLogin(dispatch) ) history.push("/create");
-  },[userInfo])
+    if (userInfo && checkLogin(dispatch)) history.push("/create");
+  }, [userInfo])
 
-  // document.addEventListener('click', () => {
-  //   let ary = ["email","phoneNum","name","password","password2","birthday"]
-  //   ary.map(aryItem => {
-  //     if (aryItem != null){
-  //       if (aryItem.value.length != 0){
-  //         const aryItemName = document.getElementByName("aryItem")
-  //         aryItemName.classList.remove("bdr");
-  //         console.log(aryItem)
-  //       }
-  //     }
-  //   })
-  // });
+  document.addEventListener('click', () => {
+    let ary = ["email", "phoneNum", "name", "password", "password2", "birthday"]
+    ary.forEach(aryItem => {
+      if (aryItem != null && aryItem.length > 1) {
+        const aryItemName = document.getElementByName(aryItem)
+        aryItemName.classList.remove("bdr");
+        console.log(aryItem)
+      }
+    })
+  });
 
   const onFinish = (e) => {
     e.preventDefault();
     const registerInfo = {
       email: email.value,
       password: password.value,
-      name: "hi",
+      name: name.value,
       phoneNum: phoneNum.value,
       birthday: birthday.value
     }
     console.log(registerInfo);
     const passwordCheck = password2.value
-    
-    if(password.value===passwordCheck){
+
+    if (password.value === passwordCheck) {
       registerToFirebase(dispatch, registerInfo);
     } else {
       password2.classList.add("bdr");
@@ -53,34 +51,34 @@ export default function RegisterForm() {
     } else {
       email.classList.remove("bdr");
     }
-    if (registerInfo.password.length == ''){
+    if (registerInfo.password.length == '') {
       password.classList.add("bdr");
     } else {
       password.classList.remove("bdr");
     }
-    if (registerInfo.password2.length == ''){
+    if (registerInfo.password2.length == '') {
       password.classList.add("bdr");
     } else {
       password.classList.remove("bdr");
     }
-    if (registerInfo.name.length == ''){
+    if (registerInfo.name.length == '') {
       name.classList.add("bdr");
     } else {
       name.classList.remove("bdr");
     }
-    if (registerInfo.phoneNum.length == ''){
+    if (registerInfo.phoneNum.length == '') {
       phoneNum.classList.add("bdr");
     } else {
       phoneNum.classList.remove("bdr");
     }
-    if (registerInfo.birthday.length == ''){
+    if (registerInfo.birthday.length == '') {
       birthday.classList.add("bdr");
     } else {
       birthday.classList.remove("bdr");
     }
   };
 
-  return(
+  return (
     <div className="commonForm mt75">
       <p className="registerForm-title">Join us !</p>
       <form className="commonForm-form" id="form">
@@ -90,15 +88,15 @@ export default function RegisterForm() {
         </div>
         <div className="form-group commonForm-block">
           <label for="exampleInputPassword1">Phone Number</label>
-          <input type="tel" className="form-control" id="phoneNum"/>
+          <input type="tel" className="form-control" id="phoneNum" />
         </div>
         <div className="form-group commonForm-block">
           <label for="exampleInputPassword1">Anonymous ID</label>
-          <input type="text" className="form-control" id="name" placeholder="Length must be less than 16 characters" maxLength="16"/>
+          <input type="text" className="form-control" id="name" placeholder="Length must be less than 16 characters" maxLength="16" />
         </div>
         <div className="form-group commonForm-block">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" className="form-control" id="password" placeholder="Length must be greater than 6 characters" minLength="6"/>
+          <input type="password" className="form-control" id="password" placeholder="Length must be greater than 6 characters" minLength="6" />
         </div>
         <div className="form-group commonForm-block">
           <label for="exampleInputPassword1">Confirm Password</label>
