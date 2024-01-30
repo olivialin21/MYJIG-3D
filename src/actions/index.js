@@ -67,18 +67,18 @@ export const registerToFirebase = async (dispatch, userInfo) => {
   dispatch({ type: BEGIN_REGISTER_REQUEST });
   try {
     const user = await registerWithEmailPassword(userInfo.email, userInfo.password, userInfo.name);
-    console.log(user)
     dispatch({
       type: SUCCESS_REGISTER_REQUEST,
       payload: user.providerData[0],
     })
+    alert("註冊成功");
     return user;
   } catch (e) {
     dispatch({
       type: FAIL_REGISTER_REQUEST,
       payload: e.message
     })
-    console.log(e)
+    alert("註冊失敗");
     return null;
   }
 }

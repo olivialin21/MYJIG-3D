@@ -17,7 +17,7 @@ import {
 export const StoreContext = createContext();
 let userInfo;
 try {
-  userInfo =  JSON.parse(localStorage.getItem("userInfo"));
+  userInfo = JSON.parse(localStorage.getItem("userInfo"));
 } catch(e) {
   userInfo = null;
 }
@@ -44,7 +44,7 @@ const initialState = {
   },
 }
 
-  function reducer(state, action) {
+function reducer(state, action) {
   switch (action.type) {
     case LOGOUT_REQUEST:
       return {

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { StoreContext } from "../store"
-import { registerToFirebase, checkLogin, saveToFirestore } from '../actions'
+import { registerToFirebase, checkLogin } from '../actions'
 
 export default function RegisterForm() {
   const { state: { userSignin: { userInfo } }, dispatch } = useContext(StoreContext);
@@ -18,65 +18,60 @@ export default function RegisterForm() {
     if (userInfo && checkLogin(dispatch)) history.push("/create");
   }, [userInfo])
 
-  document.addEventListener('click', () => {
-    let ary = ["email", "phoneNum", "name", "password", "password2", "birthday"]
-    ary.forEach(aryItem => {
-      if (aryItem != null && aryItem.length > 1) {
-        const aryItemName = document.getElementByName(aryItem)
-        aryItemName.classList.remove("bdr");
-        console.log(aryItem)
-      }
-    })
-  });
+  // document.addEventListener('click', () => {
+  //   let ary = ["email", "phoneNum", "name", "password", "password2", "birthday"]
+  //   ary.forEach(aryItem => {
+  //     if (aryItem != null && aryItem.length > 0) {
+  //       const aryItemName = document.getElementById(aryItem);
+  //       aryItemName.classList.remove("bdr");
+  //     }
+  //   })
+  // });
 
   const onFinish = (e) => {
     e.preventDefault();
+  
     const registerInfo = {
-      email: email.value,
-      password: password.value,
-      name: name.value,
-      phoneNum: phoneNum.value,
-      birthday: birthday.value
-    }
-    console.log(registerInfo);
-    const passwordCheck = password2.value
-
-    if (password.value === passwordCheck) {
+      email: email && email.value ? email.value : '',
+      password: password && password.value ? password.value : '',
+      name: name && name.value ? name.value : '',
+      phoneNum: phoneNum && phoneNum.value ? phoneNum.value : '',
+      birthday: birthday && birthday.value ? birthday.value : ''
+    };
+  
+    const passwordCheck = password2 && password2.value ? password2.value : '';
+  
+    if (
+      password.value === passwordCheck &&
+      registerInfo.email.length > 0 &&
+      registerInfo.password.length > 0 &&
+      registerInfo.name.length > 0 &&
+      registerInfo.phoneNum.length > 0 &&
+      registerInfo.birthday.length > 0
+    ) {
       registerToFirebase(dispatch, registerInfo);
     } else {
-      password2.classList.add("bdr");
+      alert("註冊失敗");
     }
-    if (registerInfo.email.length == '') {
-      email.classList.add("bdr");
-    } else {
-      email.classList.remove("bdr");
-    }
-    if (registerInfo.password.length == '') {
-      password.classList.add("bdr");
-    } else {
-      password.classList.remove("bdr");
-    }
-    if (registerInfo.password2.length == '') {
-      password.classList.add("bdr");
-    } else {
-      password.classList.remove("bdr");
-    }
-    if (registerInfo.name.length == '') {
-      name.classList.add("bdr");
-    } else {
-      name.classList.remove("bdr");
-    }
-    if (registerInfo.phoneNum.length == '') {
-      phoneNum.classList.add("bdr");
-    } else {
-      phoneNum.classList.remove("bdr");
-    }
-    if (registerInfo.birthday.length == '') {
-      birthday.classList.add("bdr");
-    } else {
-      birthday.classList.remove("bdr");
-    }
+  
+    const setInputClass = (input, condition) => {
+      if (input) {
+        if (condition) {
+          input.classList.remove("bdr");
+        } else {
+          input.classList.add("bdr");
+        }
+      }
+    };
+  
+    setInputClass(email, registerInfo.email.length > 0);
+    setInputClass(password, registerInfo.password.length > 0);
+    setInputClass(password2, passwordCheck.length > 0);
+    setInputClass(name, registerInfo.name.length > 0);
+    setInputClass(phoneNum, registerInfo.phoneNum.length > 0);
+    setInputClass(birthday, registerInfo.birthday.length > 0);
   };
+
 
   return (
     <div className="commonForm mt75">
