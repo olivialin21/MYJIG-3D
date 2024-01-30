@@ -12,7 +12,7 @@ export default function PostList() {
   return(
     <div className="postList">
       <div className="postList-lineY"></div>
-      <p>Sort by：Newest ▼</p>
+      {/* <p>Sort by：Newest ▼</p> */}
       {posts.map( post => (
         <PostItem key={post.id} post = {post}/>
       ))}
