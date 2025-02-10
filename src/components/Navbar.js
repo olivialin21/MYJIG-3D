@@ -50,8 +50,8 @@ export default function Navbar() {
   return(
     <>
       <nav className={offsetX < 992 || offsetY > 280 ? "navbar navbar-expand-lg nav nav-appear" : "navbar navbar-expand-lg nav"}>
-        <button class="navbar-toggler third-button nav-toggler" data-toggle="collapse" data-target="#nav-toggler" onClick={toggleHam}>
-          <div class={hamToggle ? "animated-icon3 open" : "animated-icon3"}><span></span><span></span><span></span></div>
+        <button className="navbar-toggler third-button nav-toggler" data-toggle="collapse" data-target="#nav-toggler" onClick={toggleHam}>
+          <div className={hamToggle ? "animated-icon3 open" : "animated-icon3"}><span></span><span></span><span></span></div>
         </button>
         <HashLink to="/#home" className="m-auto">
           <img className="nav-logo" src={imgLogo} alt="logo"/>
